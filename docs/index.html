@@ -1,0 +1,4189 @@
+<div class="markdown-google-sans">
+
+# **What is a Jupyter Notebook?**
+
+</div>
+
+**Think of it as a smart document that can run code.**
+
+You write code, run it, see results instantly, and add explanations - all in one place. It's like having a lab notebook that actually executes your experiments.
+
+### Why It Matters
+
+- **Industry Standard** - Used by data scientists at Google, Netflix, NASA, and virtually every tech company
+
+- **Perfect for Learning** - See results immediately, experiment freely, understand by doing
+
+- **Free & Open Source** - No licenses, no fees, just download and start creating
+
+- **Multi-Language Support** - Works with Python (our focus) and 40+ other languages
+
+### Core Components
+
+**Living Documents**
+
+- **Rich Text** - Explanations with formatting, images, and equations
+
+- **Live Code** - Python that runs instantly with a click
+
+- **Dynamic Output** - Charts, tables, and visualizations that update in real-time
+
+- **Interactive Widgets** - Sliders, buttons, and controls you can play with
+
+### How Does It Work?
+
+Jupyter notebooks consist of two main types of cells:
+
+**Text Cells**
+- Contain explanations, instructions, and documentation
+- Support Markdown formatting for rich text
+- Can include images, diagrams, and mathematical equations
+- Provide context and narrative for your analysis
+
+**Code Cells**
+- Contain executable Python code
+- Display output directly below when run
+- Can be modified and re-executed
+- Example:
+
+```python
+# Click this cell and press Shift+Enter to run
+print("Hello, World!")
+```
+
+**Output Areas**
+- Appear automatically after running code cells
+- Display results, visualizations, and error messages
+- Update dynamically when code is re-run
+- Support various formats: text, tables, charts, interactive widgets
+
+## 🐍 Python: The Language of AI
+
+### Why Python Dominates AI/ML
+
+**Key Advantages:**
+
+- **Beginner-Friendly** - Clean syntax that reads like English, making it accessible to newcomers
+
+- **Rich Ecosystem** - Comprehensive libraries for every AI/ML need (TensorFlow, PyTorch, scikit-learn)
+
+- **Large Community** - Millions of developers, extensive documentation, and countless learning resources
+
+- **Industry Standard** - Adopted by leading tech companies including Google, Meta, and OpenAI
+
+### Package Management: From pip to uv
+
+**Traditional Approach: pip**
+
+Python's standard package installer has limitations:
+- **Slow Performance** - Package installation can take several minutes
+- **Dependency Conflicts** - Complex resolution often leads to version conflicts
+- **Sequential Processing** - Installs packages one at a time
+
+**Modern Solution: uv**
+
+A next-generation package manager offering significant improvements:
+- **10-100x Faster** - Built with Rust for exceptional performance
+- **Smart Resolution** - Efficiently handles complex dependency trees
+- **Reliable Operations** - Atomic installations prevent environment corruption
+
+**Performance Comparison:**
+```bash
+# Traditional pip (2-5 minutes)
+$ pip install tensorflow pandas numpy scipy matplotlib
+
+# Modern uv (10-30 seconds)
+$ uv pip install tensorflow pandas numpy scipy matplotlib
+```
+
+---
+
+## Setup and Environment Configuration
+
+### Prerequisites
+
+Before beginning, ensure you have:
+- **Modern Browser** - Chrome or Firefox recommended
+- **Stable Internet** - Necessary for cloud computing resources
+- **Learning Mindset** - Ready to explore and experiment
+
+### Getting Started
+
+You're now ready to begin your journey into AI/ML. The notebook environment is set up and waiting for your first command.
+
+**Remember:** Press `Shift + Enter` to execute any code cell.
+
+---
+
+*Note: This section can be collapsed to save screen space. Click the arrow in the left margin to toggle visibility.*
+<div class="markdown-google-sans">
+
+# **About This Course - The RAG Pipeline**
+
+</div>
+## 🎯 Course Mission
+
+An interactive journey that guides you from having no prior knowledge to grasping the foundational principles of Retrieval-Augmented Generation (RAG), a method used in AI systems that integrate Large Language Models with your own data.
+
+---
+
+## 📊 Course Breakdown
+
+
+**Foundation Modules**
+- [ ] **Section 1:** Introduction to RAG - *Understanding the fundamentals*
+- [ ] **Section 2:** Document Ingestion & Preprocessing - *Clean data preparation*
+- [ ] **Section 3:** Text Chunking Strategies - *Optimal content segmentation*
+- [ ] **Section 4:** Embedding Generation - *Semantic vector creation*
+- [ ] **Section 5:** Vector Database Indexing - *High-performance storage*
+
+
+<br>
+
+As you begin exploring, here are the key areas to become familiar with:
+
+| Topic Area       | What to Get Familiar With                                       |
+|------------------|------------------------------------------------------------------|
+| **RAG Concepts** | What Retrieval-Augmented Generation is and why it's useful      |
+| **Data Processing** | How documents are cleaned, formatted, and prepared for use    |
+| **Vector Search**   | What embeddings are and how similarity search works           |
+| **Pipeline Design** | The basic flow of a retrieval-augmented system                |
+
+---
+
+### 🎯 What You'll Take Away
+
+**After Section 5, you will be able to:**
+- Explain the core components of a RAG pipeline
+- Describe how documents are embedded and stored in a vector database
+- Evaluate trade-offs in pipeline components (e.g., chunking strategy, model selection, indexing method)
+
+
+---
+
+
+
+### What Makes This Course Special
+
+**🔥 Learn by Building** - Every concept is immediately followed by working code you can run and modify
+
+**🎮 Interactive Visualizations** - Complex concepts become clear through interactive demos and visual explanations
+
+**🏗️ Real Code** - Not just toy examples, but patterns you can use in real applications **(kind of...sort of...yeah, probably not)**
+
+---
+
+## 👥 Who This Workshop Is For
+
+### Perfect For:
+- **Product Support Developers** looking to understand how AI can enhance troubleshooting and case resolution  
+- **Curious People** who want to learn how modern AI tools work behind the scenes — especially in support use cases  
+
+### Prerequisites:
+- Basic programming concepts (loops, functions, data structures)
+- Familiarity with APIs and JSON
+- Curiosity about AI and willingness to experiment!
+
+---
+
+## 🛠️ Technology Stack
+
+### Core Technologies You'll Master:
+
+**🤖 AI/ML Stack**
+- **OpenAI GPT-4** - State-of-the-art language models
+- **Embeddings API** - Convert text to semantic vectors
+- **RAGAS** - Evaluate RAG pipeline quality
+
+**💾 Data & Storage**
+- **Pinecone** - Vector database for similarity search
+- **Pandas** - Data manipulation and analysis
+- **BeautifulSoup** - Web scraping and HTML parsing
+- **PyPDF2** - PDF text extraction
+
+**🎨 Visualization & Interface**
+- **Plotly** - Interactive charts and graphs
+- **ipywidgets** - Interactive notebook controls
+- **Matplotlib/Seaborn** - Statistical visualizations
+
+---
+
+## 📖 Modified* Course Structure
+
+### Module Overview:
+
+**Section 1-3: Foundation**
+- Understanding RAG concepts
+- Document ingestion and preprocessing
+- Text chunking strategies
+
+**Section 4-6: Retrieval Core**
+- Embedding generation
+- Vector database indexing
+- Query understanding and transformation
+
+
+---
+
+## 🚀 Your Learning Journey
+
+### How This Course Works:
+
+1. **Conceptual Introduction** - Each section starts with clear explanations and analogies
+2. **Interactive Exploration** - Visualizations and demos make concepts tangible
+3. **Hands-On Implementation** - Build each component with guided coding exercises
+4. **Deep Understanding** - "Behind the Scenes" sections reveal how everything works
+5. **Practical Application** - Apply what you've learned to real problems
+
+---
+
+## 🎓 Course Outcomes
+
+---
+
+## 🏁 Ready to Begin?
+
+This course is your complete guide to mastering RAG - from understanding the fundamentals to building advanced systems that power real-world applications.
+
+Every section builds on the previous, creating a comprehensive understanding that goes beyond surface-level tutorials. You'll not only learn what to do, but understand why it works and how to adapt it to your needs.
+
+**Your journey to becoming a RAG expert starts now. Let's build something amazing together!**
+
+---
+
+*Note: This course is continuously updated with the latest techniques and best practices in RAG development. Check back regularly for new content and improvements.*
+<div class="markdown-google-sans">
+
+# **Course Setup**
+
+</div>
+# Install UV if not already installed
+import subprocess  # Library to run shell commands
+import sys  # Library to access system-specific parameters and functions
+import os  # Library for interacting with the operating system
+
+def install_uv():
+    """Install UV package manager using pip."""
+    try:
+        # Use subprocess to call pip for installing uv
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "uv"])
+        print("✅ UV installed successfully!")
+    except subprocess.CalledProcessError as e:
+        # Handle errors during the installation process
+        print(f"⚠️ Error installing UV: {e}")
+        print("⚠️ Please install UV manually: pip install uv")
+    except Exception as e:
+        print(f"⚠️ An unexpected error occurred: {e}")
+        print("⚠️ Please install UV manually: pip install uv")
+
+# Check if UV is installed by trying to import it
+try:
+    import uv  # Attempt to import the uv library
+    print("✅ UV is already installed")
+except ImportError:
+    # If ImportError occurs, uv is not installed
+    print("📦 Installing UV...")
+    install_uv() # Call the function to install uv
+## 📚 Core Dependencies Installation
+# @title ## 🔑 Environment Variables Configuration. { display-mode: "form" }
+
+print("🔐 Setting up secure configuration...")
+print("=" * 50)
+
+# Import secure configuration helper
+import sys
+import os
+from pathlib import Path
+
+# Add parent directory to path if needed
+notebook_dir = Path.cwd()
+if 'rag-pipeline-course' in str(notebook_dir):
+    project_root = notebook_dir.parent
+    sys.path.insert(0, str(project_root))
+
+try:
+    from src.secure_config import setup_secure_environment
+
+    # Setup environment securely
+    status = setup_secure_environment()
+
+    # Get configuration values (without exposing keys)
+    EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', 'text-embedding-3-large')
+    LLM_MODEL = os.getenv('LLM_MODEL', 'gpt-4')
+    PINECONE_INDEX = os.getenv('PINECONE_INDEX_NAME', 'automation-suite-docs')
+
+    print(f"\n📋 Configuration:")
+    print(f"   Embedding Model: {EMBEDDING_MODEL}")
+    print(f"   LLM Model: {LLM_MODEL}")
+    print(f"   Pinecone Index: {PINECONE_INDEX}")
+
+except ImportError:
+    print("⚠️ Secure configuration module not found.")
+    print("Using manual configuration...")
+    print("\n🔒 IMPORTANT: Never hardcode API keys!")
+    print("Please set the following environment variables:")
+    print("   - OPENAI_API_KEY")
+    print("   - TAVILY_API_KEY")
+    print("   - PINECONE_API_KEY")
+    print("\nYou can set them in a .env file or in your environment.")
+
+    # Manual fallback (user must set these)
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
+    TAVILY_API_KEY = os.getenv('TAVILY_API_KEY', '')
+    PINECONE_API_KEY = os.getenv('PINECONE_API_KEY', '')
+    PINECONE_INDEX = os.getenv('PINECONE_INDEX_NAME', '')
+    EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', '')
+    LLM_MODEL = os.getenv('LLM_MODEL', 'gpt-4')
+
+    # Set environment variables
+    if OPENAI_API_KEY:
+        os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+    if TAVILY_API_KEY:
+        os.environ['TAVILY_API_KEY'] = TAVILY_API_KEY
+    if PINECONE_API_KEY:
+        os.environ['PINECONE_API_KEY'] = PINECONE_API_KEY
+
+    os.environ['PINECONE_INDEX'] = PINECONE_INDEX
+    os.environ['EMBEDDING_MODEL'] = EMBEDDING_MODEL
+    os.environ['LLM_MODEL'] = LLM_MODEL
+
+print("\n✅ Configuration complete!")
+print("\n💡 Tip: Create a .env file in your project root with your API keys")
+print("   Example .env file content:")
+print("   OPENAI_API_KEY=your-key-here")
+print("   TAVILY_API_KEY=your-key-here")
+print("   PINECONE_API_KEY=your-key-here")
+#@title ⚙️ **Configuration Management** { display-mode: "form" }
+# A list of all necessary requirements for the project
+requirements = """
+openai>=1.0.0
+pinecone>=3.0.0
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-pinecone>=0.0.1
+tiktoken>=0.5.0
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+ipywidgets>=8.1.0
+tqdm>=4.66.0
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+tavily-python>=0.7.2
+python-dotenv>=1.0.0
+scikit-learn>=1.3.0
+ipywidgets
+PyPDF2
+"""
+
+# Write the requirements string to a file named 'requirements.txt'
+# This file is standard for listing Python project dependencies
+with open('requirements.txt', 'w') as f:
+    f.write(requirements)
+print("📦 Installing dependencies with UV...")
+
+# Install dependencies using UV, with a fallback to pip
+print("📦 Installing dependencies with UV...")
+try:
+    # Attempt to use 'uv' for installing packages from requirements.txt
+    # 'uv pip install' is the command structure for uv
+    subprocess.check_call(["uv", "pip", "install", "-r", "requirements.txt"])
+    print("✅ All dependencies installed successfully with UV!")
+except subprocess.CalledProcessError as e:
+    # Handle error if 'uv' command fails
+    print(f"❌ Error installing dependencies with UV: {e}")
+    print("💡 Falling back to regular pip...")
+    # Fallback to using standard 'pip' for installation
+    # sys.executable ensures using the pip associated with the current Python interpreter
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+    print("✅ All dependencies installed successfully with pip!")
+except FileNotFoundError:
+    # Handle error if 'uv' executable is not found
+    print("❌ UV command not found. Falling back to regular pip...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+    print("✅ All dependencies installed successfully with pip!")
+# @title Import all necessary libraries to run all course sections utilities { display-mode: "form" }
+
+# Core AI and data libraries
+import openai  # OpenAI Python client for LLM and embedding models
+import pinecone  # Pinecone Python client for vector database
+import pandas as pd  # Pandas for data manipulation (e.g., DataFrames)
+import numpy as np  # NumPy for numerical operations (e.g., vector math)
+
+# Python standard libraries and type hinting
+from typing import List, Dict, Any, Optional, Tuple # For robust type annotations
+import json  # For working with JSON data
+import time  # For time-related operations (e.g., measuring execution time)
+from datetime import datetime  # For working with dates and times
+import hashlib # For hashing functions (e.g., creating unique IDs)
+from tqdm.notebook import tqdm  # For displaying progress bars in Jupyter notebooks
+import warnings  # To manage warning messages
+warnings.filterwarnings('ignore')  # Suppress warnings to keep output clean
+
+
+# Visualization libraries
+import matplotlib.pyplot as plt  # Matplotlib for basic plotting
+import seaborn as sns  # Seaborn for enhanced statistical visualizations
+import plotly.graph_objects as go  # Plotly for interactive graphs
+import plotly.express as px  # Plotly Express for quick interactive plots
+from plotly.subplots import make_subplots # For creating figures with multiple subplots with Plotly
+import ipywidgets as widgets
+
+# Set a default plotting style for matplotlib and seaborn
+plt.style.use('seaborn-v0_8-darkgrid')
+sns.set_palette("husl") # Set a color palette for seaborn plots
+
+# Langchain imports - a framework for building LLM applications
+from langchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter # For chunking text
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI # OpenAI integrations for embeddings and chat models
+from langchain.schema import Document # Standard Document object in Langchain
+from langchain_pinecone import PineconeVectorStore # Pinecone integration as a vector store
+from langchain.chains import RetrievalQA # Chain for question-answering with retrieval
+from langchain.prompts import PromptTemplate # For creating dynamic LLM prompts
+
+print("✅ All libraries imported successfully!")
+
+# Display current configuration from environment variables (set by APIKeyManager)
+print("\n📋 Current Environment Configuration:")
+print(f"   Embedding Model: {os.environ.get('EMBEDDING_MODEL', 'Not set')}")
+print(f"   LLM Model: {os.environ.get('LLM_MODEL', 'Not set')}")
+print(f"   Pinecone Index: {os.environ.get('PINECONE_INDEX', 'Not set')}")
+#@title Setup helper libraries  { display-mode: "form" }
+# from google.colab import userdata
+
+# def load_secrets(keys):
+#     return {key: userdata.get(key) for key in keys}
+
+# # Define all expected secrets here
+# SECRET_KEYS = [
+#     'OPENAI_API_KEY',
+#     'TAVILY_API_KEY',
+#     'DOC_VIEW_URL',
+#     'GITHUB_TOKEN'
+# ]
+
+# secrets = load_secrets(SECRET_KEYS)
+
+# Now you can access like:
+# openai.api_key = secrets['OPENAI_API_KEY']
+# doc_url = secrets['DOC_VIEW_URL']
+class DocumentIngestionPipeline:
+    """Unified pipeline for ingesting various document types"""
+
+    def __init__(self):
+        self.documents = []
+        self.stats = {
+            'pdf': {'count': 0, 'pages': 0, 'characters': 0},
+            'csv': {'count': 0, 'rows': 0, 'characters': 0},
+            'webpage': {'count': 0, 'characters': 0}
+        }
+
+    def ingest_pdf(self, file_path: str) -> List[Dict]:
+        """Extract text and metadata from PDF files"""
+        documents = []
+
+        try:
+            with open(file_path, 'rb') as file:
+                pdf_reader = PyPDF2.PdfReader(file)
+
+                # Extract metadata
+                metadata = {
+                    'source': file_path,
+                    'type': 'pdf',
+                    'title': pdf_reader.metadata.get('/Title', 'Untitled') if pdf_reader.metadata else 'Untitled',
+                    'created_date': str(pdf_reader.metadata.get('/CreationDate', '')) if pdf_reader.metadata else '',
+                    'pages': len(pdf_reader.pages),
+                    'ingested_at': datetime.now().isoformat()
+                }
+
+                # Extract text from each page
+                full_text = ""
+                page_texts = []
+
+                for page_num, page in enumerate(pdf_reader.pages):
+                    page_text = page.extract_text()
+                    # Clean extracted text
+                    page_text = self._clean_text(page_text)
+                    page_texts.append((page_num + 1, page_text))
+                    full_text += f"\n[Page {page_num + 1}]\n{page_text}"
+
+                doc = {
+                    'content': full_text,
+                    'metadata': metadata,
+                    'doc_id': self._generate_doc_id(full_text),
+                    'page_texts': page_texts
+                }
+                documents.append(doc)
+
+                # Update stats
+                self.stats['pdf']['count'] += 1
+                self.stats['pdf']['pages'] += len(pdf_reader.pages)
+                self.stats['pdf']['characters'] += len(full_text)
+
+        except Exception as e:
+            print(f"❌ Error processing PDF {file_path}: {e}")
+
+        return documents
+
+    def ingest_csv(self, file_path: str, text_columns: List[str] = None) -> List[Dict]:
+        """Convert CSV data into searchable documents"""
+        documents = []
+
+        try:
+            df = pd.read_csv(file_path)
+
+            # Store sample for display
+            sample_rows = df.head(3).to_dict('records')
+            total_rows = len(df)
+            columns = list(df.columns)
+
+            # Auto-detect text columns if not provided
+            if not text_columns:
+                # Try common column names first
+                common_text_cols = ['subject', 'description', 'resolution', 'content', 'text', 'message', 'body']
+                text_columns = [col for col in common_text_cols if col in columns]
+
+                # If no common columns found, use all object-type columns
+                if not text_columns:
+                    text_columns = [col for col in columns if df[col].dtype == 'object'][:3]
+
+            # Process each row
+            for idx, row in df.iterrows():
+                # Combine specified text columns
+                content_parts = []
+                for col in text_columns:
+                    if col in df.columns and pd.notna(row[col]):
+                        content_parts.append(f"{col}: {row[col]}")
+
+                content = "\n".join(content_parts)
+
+                # Skip empty documents
+                if not content.strip():
+                    continue
+
+                metadata = {
+                    'source': file_path,
+                    'type': 'csv',
+                    'row_index': idx,
+                    'ingested_at': datetime.now().isoformat()
+                }
+
+                # Add other columns as metadata
+                for col in df.columns:
+                    if col not in text_columns:
+                        metadata[f'csv_{col}'] = str(row[col])
+
+                documents.append({
+                    'content': content,
+                    'metadata': metadata,
+                    'doc_id': self._generate_doc_id(content)
+                })
+
+            # Update stats
+            self.stats['csv']['count'] += 1
+            self.stats['csv']['rows'] += len(df)
+            self.stats['csv']['characters'] += sum(len(doc['content']) for doc in documents)
+
+            # Store sample info in first document for display
+            if documents:
+                documents[0]['sample_rows'] = sample_rows
+                documents[0]['total_rows'] = total_rows
+                documents[0]['columns'] = columns
+                documents[0]['text_columns'] = text_columns
+
+        except Exception as e:
+            print(f"❌ Error processing CSV {file_path}: {e}")
+
+        return documents
+
+    def scrape_webpage(self, url: str) -> List[Dict]:
+        """Scrape and clean web content"""
+        documents = []
+
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            # Store original HTML length for display
+            original_html_length = len(response.text)
+
+            # Remove script and style elements
+            for script in soup(["script", "style", "nav", "footer", "header", "aside"]):
+                script.decompose()
+
+            # Extract main content
+            main_content = soup.find('main') or soup.find('article') or soup.find('div', class_='content') or soup.find('body')
+
+            # Extract text
+            text = main_content.get_text() if main_content else soup.get_text()
+            text = self._clean_text(text)
+
+            # Extract metadata
+            metadata = {
+                'source': url,
+                'type': 'webpage',
+                'title': soup.find('title').string if soup.find('title') else 'Untitled',
+                'description': self._get_meta_content(soup, 'description'),
+                'keywords': self._get_meta_content(soup, 'keywords'),
+                'ingested_at': datetime.now().isoformat()
+            }
+
+            doc = {
+                'content': text,
+                'metadata': metadata,
+                'doc_id': self._generate_doc_id(text),
+                'html_stats': {
+                    'original_size': original_html_length,
+                    'cleaned_size': len(text),
+                    'reduction': f"{(1 - len(text)/original_html_length)*100:.1f}%"
+                }
+            }
+
+            documents.append(doc)
+
+            # Update stats
+            self.stats['webpage']['count'] += 1
+            self.stats['webpage']['characters'] += len(text)
+
+        except Exception as e:
+            print(f"❌ Error processing webpage {url}: {e}")
+
+        return documents
+
+    def _clean_text(self, text: str) -> str:
+        """Clean and normalize text"""
+        # Remove excessive whitespace
+        text = re.sub(r'\s+', ' ', text)
+        # Remove special characters but keep punctuation
+        text = re.sub(r'[^\w\s\.\,\!\?\-\:\;\(\)\[\]\/\']', '', text)
+        # Remove multiple spaces
+        text = re.sub(r' +', ' ', text)
+        # Trim
+        return text.strip()
+
+    def _get_meta_content(self, soup, name: str) -> Optional[str]:
+        """Extract meta tag content"""
+        meta = soup.find('meta', attrs={'name': name})
+        return meta.get('content') if meta else None
+
+    def _generate_doc_id(self, content: str) -> str:
+        """Generate unique document ID"""
+        return hashlib.md5(content.encode()).hexdigest()[:12]
+
+class IngestionVisualizer:
+    """Visualize the document ingestion process"""
+
+    def __init__(self, width: int = 80):
+        self.width = width
+        self.wrapper = textwrap.TextWrapper(width=width-6, break_long_words=False)
+
+    def print_header(self, text: str, emoji: str = ""):
+        """Print section header"""
+        header = f"{emoji} {text}" if emoji else text
+        print(f"\n{'='*self.width}")
+        print(header.center(self.width))
+        print(f"{'='*self.width}\n")
+
+    def print_file_info(self, file_type: str, file_path: str):
+        """Print file information box"""
+        print(f"┌{'─'*(self.width-2)}┐")
+        print(f"│ {'📁 FILE INFORMATION':<{self.width-4}} │")
+        print(f"├{'─'*(self.width-2)}┤")
+        print(f"│ Type: {file_type:<{self.width-9}} │")
+        print(f"│ Path: {file_path:<{self.width-9}} │")
+        print(f"│ Exists: {'✓ Yes' if (file_type != 'Webpage' and os.path.exists(file_path)) or file_type == 'Webpage' else '✗ No':<{self.width-11}} │")
+        print(f"└{'─'*(self.width-2)}┘")
+
+    def print_pdf_extraction(self, document: Dict):
+        """Visualize PDF extraction"""
+        metadata = document['metadata']
+
+        print(f"\n📄 PDF METADATA EXTRACTED:")
+        print(f"   Title: {metadata['title']}")
+        print(f"   Pages: {metadata['pages']}")
+        print(f"   Created: {metadata['created_date'][:10] if metadata['created_date'] else 'Unknown'}")
+
+        print(f"\n📑 PAGE EXTRACTION:")
+        for page_num, page_text in document.get('page_texts', [])[:2]:  # Show first 2 pages
+            print(f"\n   Page {page_num}:")
+            print("   " + "-"*40)
+            preview = page_text[:150] + "..." if len(page_text) > 150 else page_text
+            for line in self.wrapper.wrap(preview):
+                print(f"   {line}")
+
+        if metadata['pages'] > 2:
+            print(f"\n   ... and {metadata['pages'] - 2} more pages")
+
+    def print_csv_extraction(self, documents: List[Dict]):
+        """Visualize CSV extraction"""
+        if not documents:
+            return
+
+        first_doc = documents[0]
+
+        print(f"\n📊 CSV STRUCTURE:")
+        print(f"   Total Rows: {first_doc.get('total_rows', 'Unknown')}")
+        print(f"   Columns: {', '.join(first_doc.get('columns', []))}")
+        print(f"   Text Columns Used: {', '.join(first_doc.get('text_columns', []))}")
+
+        print(f"\n📋 SAMPLE ROWS (First 3):")
+        if 'sample_rows' in first_doc:
+            for i, row in enumerate(first_doc['sample_rows']):
+                print(f"\n   Row {i+1}:")
+                for key, value in list(row.items())[:5]:  # Show first 5 columns
+                    print(f"     {key}: {str(value)[:50]}...")
+
+        print(f"\n🔄 DOCUMENT CONVERSION:")
+        print(f"   Documents created: {len(documents)}")
+        print(f"   Sample document content:")
+        print("   " + "-"*40)
+        sample_content = documents[0]['content'][:200] + "..." if len(documents[0]['content']) > 200 else documents[0]['content']
+        for line in self.wrapper.wrap(sample_content):
+            print(f"   {line}")
+
+    def print_webpage_extraction(self, document: Dict):
+        """Visualize webpage extraction"""
+        metadata = document['metadata']
+        stats = document.get('html_stats', {})
+
+        print(f"\n🌐 WEBPAGE METADATA:")
+        print(f"   Title: {metadata['title']}")
+        print(f"   Description: {metadata['description'][:80] + '...' if metadata['description'] and len(metadata['description']) > 80 else metadata['description']}")
+
+        print(f"\n🧹 HTML CLEANING:")
+        print(f"   Original HTML size: {stats.get('original_size', 0):,} characters")
+        print(f"   Cleaned text size: {stats.get('cleaned_size', 0):,} characters")
+        print(f"   Size reduction: {stats.get('reduction', 'N/A')}")
+
+        print(f"\n📝 EXTRACTED CONTENT:")
+        print("   " + "-"*40)
+        preview = document['content'][:300] + "..." if len(document['content']) > 300 else document['content']
+        for line in self.wrapper.wrap(preview):
+            print(f"   {line}")
+
+    def print_summary(self, pipeline: DocumentIngestionPipeline, all_documents: List[Dict]):
+        """Print ingestion summary"""
+        print(f"\n{'🎯 INGESTION SUMMARY':^{self.width}}")
+        print("┌" + "─"*30 + "┬" + "─"*15 + "┬" + "─"*15 + "┬" + "─"*15 + "┐")
+        print("│" + " Document Type".center(30) + "│" + " Count".center(15) +
+              "│" + " Items".center(15) + "│" + " Characters".center(15) + "│")
+        print("├" + "─"*30 + "┼" + "─"*15 + "┼" + "─"*15 + "┼" + "─"*15 + "┤")
+
+        # PDF stats
+        pdf_stats = pipeline.stats['pdf']
+        print(f"│ {'PDF Files':<28} │ {pdf_stats['count']:^13} │ "
+              f"{pdf_stats['pages']:^13} │ {pdf_stats['characters']:^13,} │")
+
+        # CSV stats
+        csv_stats = pipeline.stats['csv']
+        print(f"│ {'CSV Files':<28} │ {csv_stats['count']:^13} │ "
+              f"{csv_stats['rows']:^13} │ {csv_stats['characters']:^13,} │")
+
+        # Webpage stats
+        web_stats = pipeline.stats['webpage']
+        print(f"│ {'Web Pages':<28} │ {web_stats['count']:^13} │ "
+              f"{'N/A':^13} │ {web_stats['characters']:^13,} │")
+
+        print("└" + "─"*30 + "┴" + "─"*15 + "┴" + "─"*15 + "┴" + "─"*15 + "┘")
+
+        total_docs = len(all_documents)
+        total_chars = sum(s['characters'] for s in pipeline.stats.values())
+        print(f"\n📚 Total Documents Created: {total_docs}")
+        print(f"📏 Total Characters: {total_chars:,}")
+
+# @title 🔧 Initialize RAG Pipeline State { display-mode: "form" }
+
+import json
+import pickle
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+from dataclasses import dataclass, field
+import pandas as pd
+
+@dataclass
+class RAGPipelineState:
+    """
+    Unified state management for the entire RAG pipeline course.
+    This class tracks all data and configurations as you progress through each section.
+    """
+
+    # Section 1: Basic configuration
+    course_start_time: datetime = field(default_factory=datetime.now)
+    company_name: str = "TechCorp"
+    use_case: str = "Internal Knowledge Base & Support System"
+
+    # Section 2: Document ingestion
+    raw_documents: List[Dict] = field(default_factory=list)
+    document_stats: Dict[str, int] = field(default_factory=dict)
+
+    # Section 3: Text chunking
+    chunks: List[Dict] = field(default_factory=list)
+    chunking_strategy: str = "adaptive"
+    chunk_size: int = 400
+    chunk_overlap: int = 50
+
+    # Section 4: Embeddings
+    chunks_with_embeddings: List[Dict] = field(default_factory=list)
+    embedding_model: str = "text-embedding-3-large"
+    embedding_dimensions: int = 3072
+
+    # Section 5: Vector database
+    vector_db_initialized: bool = False
+    index_name: str = "techcorp-knowledge-base"
+    total_vectors_stored: int = 0
+
+    # Section 6: Query processing
+    query_history: List[Dict] = field(default_factory=list)
+    query_transformations: List[Dict] = field(default_factory=list)
+
+    # Section 7: Retrieval
+    retrieval_results: List[Dict] = field(default_factory=list)
+    retrieval_strategy: str = "hybrid"
+
+    # Section 8: Context synthesis
+    synthesized_contexts: List[Dict] = field(default_factory=list)
+    context_window_size: int = 3000
+
+    # Section 9: Generation
+    generated_responses: List[Dict] = field(default_factory=list)
+    generation_model: str = "gpt-4"
+
+    # Section 10: Quality assurance
+    qa_results: List[Dict] = field(default_factory=list)
+    quality_thresholds: Dict[str, float] = field(default_factory=lambda: {
+        "faithfulness": 0.8,
+        "relevance": 0.7,
+        "safety": 0.95
+    })
+
+    # Section 11: Feedback
+    user_feedback: List[Dict] = field(default_factory=list)
+    improvement_suggestions: List[Dict] = field(default_factory=list)
+
+    # Progress tracking
+    completed_sections: List[int] = field(default_factory=list)
+    current_section: int = 1
+    total_sections: int = 13
+
+    # Debugging and validation
+    debug_mode: bool = True
+    validation_errors: List[Dict] = field(default_factory=list)
+
+    def mark_section_complete(self, section_num: int):
+        """Mark a section as completed and update progress."""
+        if section_num not in self.completed_sections:
+            self.completed_sections.append(section_num)
+            self.completed_sections.sort()
+            print(f"✅ Section {section_num} completed!")
+            self.display_progress()
+
+    def display_progress(self):
+        """Display current progress through the course."""
+        progress_pct = (len(self.completed_sections) / self.total_sections) * 100
+        completed_bar = "█" * int(progress_pct / 5)
+        remaining_bar = "░" * (20 - int(progress_pct / 5))
+
+        print(f"\n📊 Course Progress: [{completed_bar}{remaining_bar}] {progress_pct:.1f}%")
+        print(f"   Completed: {self.completed_sections}")
+        print(f"   Current Section: {self.current_section}")
+
+    def add_document(self, doc: Dict):
+        """Add a document to the pipeline state."""
+        self.raw_documents.append(doc)
+        doc_type = doc.get('metadata', {}).get('type', 'unknown')
+        self.document_stats[doc_type] = self.document_stats.get(doc_type, 0) + 1
+
+        if self.debug_mode:
+            print(f"📄 Added document: {doc.get('doc_id', 'unknown')[:20]}... (type: {doc_type})")
+
+    def add_chunk(self, chunk: Dict):
+        """Add a processed chunk to the state."""
+        self.chunks.append(chunk)
+
+    def add_embedding(self, chunk_with_embedding: Dict):
+        """Add a chunk with its embedding to the state."""
+        self.chunks_with_embeddings.append(chunk_with_embedding)
+
+    def record_query(self, query: str, transformed_query: str = None):
+        """Record a user query and any transformations."""
+        query_record = {
+            "timestamp": datetime.now().isoformat(),
+            "original_query": query,
+            "transformed_query": transformed_query or query,
+            "section": self.current_section
+        }
+        self.query_history.append(query_record)
+
+    def validate_state(self, section: int) -> List[str]:
+        """Validate state before proceeding to next section."""
+        errors = []
+
+        if section == 2 and not self.raw_documents:
+            errors.append("No documents ingested in Section 2")
+        elif section == 3 and not self.chunks:
+            errors.append("No chunks created in Section 3")
+        elif section == 4 and not self.chunks_with_embeddings:
+            errors.append("No embeddings generated in Section 4")
+        elif section == 5 and not self.vector_db_initialized:
+            errors.append("Vector database not initialized in Section 5")
+
+        return errors
+
+    def get_sample_data(self, data_type: str, n: int = 3) -> List[Dict]:
+        """Get sample data for testing and visualization."""
+        data_map = {
+            "documents": self.raw_documents,
+            "chunks": self.chunks,
+            "embeddings": self.chunks_with_embeddings,
+            "queries": self.query_history,
+            "responses": self.generated_responses
+        }
+
+        data = data_map.get(data_type, [])
+        return data[:n] if data else []
+
+    def generate_summary_report(self) -> str:
+        """Generate a summary report of the current pipeline state."""
+        report = f"""
+# RAG Pipeline State Summary
+Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+## Configuration
+- Company: {self.company_name}
+- Use Case: {self.use_case}
+- Embedding Model: {self.embedding_model}
+- Generation Model: {self.generation_model}
+
+## Progress
+- Completed Sections: {len(self.completed_sections)}/{self.total_sections}
+- Current Section: {self.current_section}
+
+## Data Statistics
+- Documents Ingested: {len(self.raw_documents)}
+- Document Types: {json.dumps(self.document_stats, indent=2)}
+- Total Chunks: {len(self.chunks)}
+- Chunks with Embeddings: {len(self.chunks_with_embeddings)}
+- Vectors in Database: {self.total_vectors_stored}
+
+## Query Statistics
+- Total Queries Processed: {len(self.query_history)}
+- Responses Generated: {len(self.generated_responses)}
+- QA Checks Performed: {len(self.qa_results)}
+- User Feedback Collected: {len(self.user_feedback)}
+
+## Quality Metrics
+- Average Faithfulness Score: {self._calculate_avg_quality('faithfulness'):.2f}
+- Average Relevance Score: {self._calculate_avg_quality('relevance'):.2f}
+- Average Safety Score: {self._calculate_avg_quality('safety'):.2f}
+"""
+        return report
+
+    def _calculate_avg_quality(self, metric: str) -> float:
+        """Calculate average quality score for a specific metric."""
+        if not self.qa_results:
+            return 0.0
+
+        scores = [r.get(metric, 0) for r in self.qa_results if metric in r]
+        return sum(scores) / len(scores) if scores else 0.0
+
+    def save_state(self, filename: str = "rag_pipeline_state.pkl"):
+        """Save the current state to disk."""
+        with open(filename, 'wb') as f:
+            pickle.dump(self, f)
+        print(f"💾 State saved to {filename}")
+
+    def load_state(self, filename: str = "rag_pipeline_state.pkl"):
+        """Load state from disk."""
+        try:
+            with open(filename, 'rb') as f:
+                loaded_state = pickle.load(f)
+                # Copy attributes from loaded state
+                for key, value in loaded_state.__dict__.items():
+                    setattr(self, key, value)
+            print(f"📂 State loaded from {filename}")
+            self.display_progress()
+        except FileNotFoundError:
+            print(f"⚠️ No saved state found at {filename}")
+
+
+# Initialize the global state
+print("🚀 Initializing RAG Pipeline State Management System...")
+pipeline_state = RAGPipelineState()
+
+print(f"\n🏢 Company: {pipeline_state.company_name}")
+print(f"📋 Use Case: {pipeline_state.use_case}")
+print(f"📅 Started: {pipeline_state.course_start_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+pipeline_state.display_progress()
+
+print("\n💡 The pipeline_state object will track your progress throughout the course.")
+print("   Use pipeline_state.save_state() to save your progress at any time!")
+print("   Use pipeline_state.load_state() to restore your previous work!")
+
+# Store in globals for access across all cells
+globals()['pipeline_state'] = pipeline_state
+# @title 📚 Create TechCorp Sample Documents { display-mode: "form" }
+
+# Create sample documents for our unified TechCorp knowledge base scenario
+sample_documents = {
+    "employee_handbook": """
+# TechCorp Employee Handbook
+
+## Welcome to TechCorp
+Welcome to TechCorp, where we're building the future of enterprise software. This handbook contains important information about company policies, benefits, and procedures.
+
+## Company Values
+- **Innovation**: We embrace new ideas and technologies
+- **Integrity**: We do the right thing, even when no one is watching
+- **Collaboration**: We work together to achieve great things
+- **Customer Focus**: We put our customers at the center of everything we do
+
+## Working Hours and Time Off
+### Standard Working Hours
+Our standard working hours are Monday through Friday, 9:00 AM to 5:00 PM local time. We support flexible working arrangements - please discuss with your manager.
+
+### Vacation Policy
+All full-time employees receive:
+- Years 1-2: 15 days paid vacation
+- Years 3-5: 20 days paid vacation
+- Years 6+: 25 days paid vacation
+
+Vacation time must be approved by your manager at least 2 weeks in advance.
+
+### Sick Leave
+All employees receive 10 days of paid sick leave per year. If you're sick, notify your manager as soon as possible.
+
+## Remote Work Policy
+TechCorp supports hybrid work arrangements. Employees may work remotely up to 3 days per week with manager approval. When working remotely:
+- Maintain regular working hours
+- Be available via Slack and email
+- Attend all scheduled meetings via video
+- Ensure a professional background for video calls
+
+## Benefits
+### Health Insurance
+TechCorp provides comprehensive health, dental, and vision insurance. Coverage begins on your first day of employment.
+
+### 401(k) Retirement Plan
+We offer a 401(k) plan with company matching:
+- TechCorp matches 100% of the first 3% you contribute
+- TechCorp matches 50% of the next 2% you contribute
+- Maximum total match: 4% of your salary
+
+### Professional Development
+Each employee receives $2,000 annually for professional development, including:
+- Conferences and workshops
+- Online courses and certifications
+- Books and learning materials
+""",
+
+    "it_security_policy": """
+# TechCorp IT Security Policy
+
+## Password Requirements
+All TechCorp systems require strong passwords that meet these criteria:
+- Minimum 12 characters
+- At least one uppercase letter
+- At least one lowercase letter
+- At least one number
+- At least one special character
+- Cannot contain your username or real name
+- Must be changed every 90 days
+- Cannot reuse last 12 passwords
+
+## Multi-Factor Authentication (MFA)
+MFA is required for all systems containing sensitive data:
+- Email access
+- VPN connections
+- Cloud services (AWS, Azure, GCP)
+- Source code repositories
+- HR and financial systems
+
+## Data Classification
+### Confidential Data
+- Customer personal information
+- Financial records
+- Strategic plans
+- Source code
+- Employee personal data
+
+### Internal Data
+- General business documents
+- Internal communications
+- Non-sensitive project information
+
+### Public Data
+- Marketing materials
+- Public documentation
+- Open source code
+
+## Incident Response
+If you suspect a security incident:
+1. Immediately disconnect affected systems from the network
+2. Do not attempt to fix the issue yourself
+3. Contact IT Security: security@techcorp.com or call x5555
+4. Document everything you observed
+5. Do not discuss the incident outside of IT Security
+
+## Acceptable Use
+Company IT resources may only be used for business purposes. Prohibited activities include:
+- Installing unauthorized software
+- Accessing inappropriate websites
+- Sharing passwords or access credentials
+- Connecting personal devices without IT approval
+- Circumventing security controls
+""",
+
+    "api_documentation": """
+# TechCorp API Documentation
+
+## Authentication API
+
+### Overview
+The TechCorp Authentication API provides secure access to our platform services. All API requests must include a valid API key and use HTTPS.
+
+### Base URL
+Production: https://api.techcorp.com/v2
+Staging: https://api-staging.techcorp.com/v2
+
+### Authentication Methods
+
+#### API Key Authentication
+Include your API key in the Authorization header:
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+#### OAuth 2.0
+For third-party integrations, we support OAuth 2.0 with the following flows:
+- Authorization Code Flow
+- Client Credentials Flow
+
+### Common Endpoints
+
+#### POST /auth/login
+Authenticate a user and receive access tokens.
+
+Request:
+```json
+{
+  "username": "user@example.com",
+  "password": "secure_password"
+}
+```
+
+Response:
+```json
+{
+  "access_token": "eyJhbGc...",
+  "refresh_token": "dGhpcyB...",
+  "expires_in": 3600
+}
+```
+
+#### POST /auth/refresh
+Refresh an expired access token.
+
+Request:
+```json
+{
+  "refresh_token": "dGhpcyB..."
+}
+```
+
+### Error Codes
+- 401: Unauthorized - Invalid or missing credentials
+- 403: Forbidden - Valid credentials but insufficient permissions
+- 429: Too Many Requests - Rate limit exceeded
+- 500: Internal Server Error - Something went wrong on our end
+
+### Rate Limiting
+API requests are limited to:
+- Standard tier: 100 requests per minute
+- Premium tier: 1000 requests per minute
+- Enterprise tier: Custom limits
+
+### Best Practices
+1. Always use HTTPS
+2. Store API keys securely (use environment variables)
+3. Implement exponential backoff for retries
+4. Log all API interactions for debugging
+5. Monitor your usage to avoid rate limits
+""",
+
+    "troubleshooting_guide": """
+# TechCorp Platform Troubleshooting Guide
+
+## Common Issues and Solutions
+
+### Authentication Errors
+
+#### Error 401: Unauthorized
+**Symptoms**: API returns 401 status code
+**Common Causes**:
+- Expired API key
+- Incorrect API key format
+- Missing Authorization header
+
+**Solutions**:
+1. Verify your API key is correct and active
+2. Check the Authorization header format: `Bearer YOUR_KEY`
+3. Ensure your API key hasn't expired (check dashboard)
+4. Try regenerating your API key from the dashboard
+
+#### Error 403: Forbidden
+**Symptoms**: Valid authentication but access denied
+**Common Causes**:
+- Insufficient permissions for resource
+- IP address not whitelisted
+- Account suspended or limited
+
+**Solutions**:
+1. Verify your account has the required permissions
+2. Check if IP whitelisting is enabled for your account
+3. Contact support if account issues are suspected
+
+### Performance Issues
+
+#### Slow API Response Times
+**Symptoms**: API requests taking >5 seconds
+**Common Causes**:
+- Large payload sizes
+- Inefficient queries
+- Network latency
+- Rate limiting
+
+**Solutions**:
+1. Implement pagination for large result sets
+2. Use field filtering to reduce payload size
+3. Check your network connection and latency
+4. Monitor rate limit headers in responses
+
+#### Connection Timeouts
+**Symptoms**: Requests fail with timeout errors
+**Common Causes**:
+- Network connectivity issues
+- Firewall blocking connections
+- Server overload
+
+**Solutions**:
+1. Test connectivity: `ping api.techcorp.com`
+2. Check firewall rules for port 443 (HTTPS)
+3. Implement retry logic with exponential backoff
+4. Try again during off-peak hours
+
+### Data Issues
+
+#### Missing or Incorrect Data
+**Symptoms**: API returns unexpected or missing fields
+**Common Causes**:
+- API version mismatch
+- Incorrect query parameters
+- Data not yet synchronized
+
+**Solutions**:
+1. Verify you're using the correct API version
+2. Check API documentation for required parameters
+3. Allow 5-10 minutes for data synchronization
+4. Use the data validation endpoint to verify
+
+### Integration Problems
+
+#### Webhook Delivery Failures
+**Symptoms**: Webhooks not being received
+**Common Causes**:
+- Incorrect webhook URL
+- SSL certificate issues
+- Webhook endpoint returning errors
+
+**Solutions**:
+1. Verify webhook URL is publicly accessible
+2. Ensure valid SSL certificate on your endpoint
+3. Check webhook logs in the dashboard
+4. Test with a service like webhook.site first
+"""
+}
+
+# Create a function to save these as files that can be ingested
+import os
+import tempfile
+
+def create_sample_documents():
+    """Create sample TechCorp documents for the RAG pipeline."""
+    temp_dir = tempfile.mkdtemp(prefix="techcorp_docs_")
+    doc_paths = []
+
+    for filename, content in sample_documents.items():
+        filepath = os.path.join(temp_dir, f"{filename}.md")
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(content)
+        doc_paths.append(filepath)
+        print(f"📄 Created: {filename}.md")
+
+    print(f"\n✅ Sample documents created in: {temp_dir}")
+    print(f"📁 Total documents: {len(doc_paths)}")
+
+    # Store the paths in our state for easy access
+    pipeline_state.sample_doc_dir = temp_dir
+    pipeline_state.sample_doc_paths = doc_paths
+
+    return temp_dir, doc_paths
+
+# Create the documents
+doc_dir, doc_paths = create_sample_documents()
+
+print("\n💡 These documents simulate a real company knowledge base:")
+print("   - Employee Handbook (HR policies)")
+print("   - IT Security Policy (security guidelines)")
+print("   - API Documentation (technical reference)")
+print("   - Troubleshooting Guide (support knowledge)")
+print("\n🎯 We'll use these throughout the course to build our RAG system!")
+<div class="markdown-google-sans">
+
+# **Before We Begin**
+
+</div>
+
+## 📊 Overview
+
+Throughout this course, we'll build a complete RAG pipeline using a **Company Knowledge Base** scenario. This unified state management system ensures all sections work together seamlessly, creating a cohesive learning experience where each step builds upon the previous ones.
+
+### 🎯 Our Scenario: TechCorp Support Knowledge Base
+
+You're building an AI-powered support system for TechCorp, a fictional software company. The system will:
+- Answer employee questions about company policies, procedures, and technical documentation
+- Provide accurate, source-cited responses for compliance and auditing
+- Handle diverse document types: HR policies, technical guides, FAQs, and more
+
+### 📈 Progress Tracking
+
+As you work through each section, the state management system:
+- **Preserves your work** between sections
+- **Tracks your progress** and achievements
+- **Validates outputs** before moving forward
+- **Provides debugging information** when things go wrong
+
+This creates a production-like development experience where you can see how real RAG systems are built incrementally.
+<div class="markdown-google-sans">
+
+# **Section 1: RAG At A Glance**
+</div>
+
+## 🎯 Learning Objectives
+
+> By the end of this section, you will:
+- **Understand** the fundamental problems RAG solves (knowledge cutoffs, hallucinations, lack of private data access)
+- **Explain** how the retrieve-then-generate workflow addresses these limitations
+- **Identify** scenarios where RAG is essential versus optional
+- **Recognize** the importance of context grounding for AI reliability
+
+<br>
+
+## 💡 The Restaurant Analogy
+
+Think of RAG like the difference between a chef who only cooks from memory versus one who consults cookbooks and checks the freshest ingredients available.
+
+**Traditional LLM (Memory Chef):**
+- Uses only what they learned during training
+- Can't access new recipes or current ingredients
+- Sometimes confidently serves dishes with missing or wrong ingredients
+- No way to verify where the recipe came from
+
+**RAG System (Research Chef):**
+1. **Customer orders** a dish (user asks a question)
+2. **Chef consults** current cookbooks and checks fresh ingredients (retrieval)
+3. **Chef combines** their skills with the researched information (generation)
+4. **Chef serves** the dish with a note about which cookbook and ingredients were used (citations)
+
+This makes the meal both delicious and trustworthy!
+
+<br>
+<div class="markdown-google-sans">
+
+## 📖 Overview
+
+### Why Retrieval-Augmented Generation (RAG)?
+
+<font color='blue' size="3em">**Foundation Models**</font>, while powerful, suffer from <font color='blue' size="3em">**knowledge cutoffs**</font> and a tendency towards <font color='blue' size="3em">**hallucinations**.</font> They cannot reliably access proprietary or real-time information.
+
+<font color='blue' size="3em">**Retrieval-Augmented Generation (RAG)**</font> makes AI answers more reliable by adding a research step. Before answering, the AI first searches trusted sources and then uses that information, referred to as <font color='blue' size="3em">**context grounding**</font>, to generate responses based on facts rather than just its built-in knowledge.
+
+RAG systems give you better answers by reducing mistakes, keeping information current, and allowing access to private documents without expensive model retraining. Just as data scientists prepare features for classic machine learning, context grounding prepares the right information for foundation models.
+</div>
+
+<br>
+
+<img src="https://raw.githubusercontent.com/seffbright/rag-pipeline-course/refs/heads/main/images/section-1.png" alt="Document Ingestion Flow Diagram" style="width: 100%; border-radius: 10px;">
+<p style="text-align: center; margin-top: 10px;"><em>High-level Retrieval-Augmented Generation (RAG) workflow: a user prompt is first cleaned and expanded in Query Understanding, sent to a Retriever to fetch relevant knowledge, passed through a Reader/LLM that crafts the answer, and finally returned as a Response, with a feedback loop for follow-up questions back to the query step.</em></p>
+<br>  
+
+
+
+### 🔍 Key Terms & Concepts
+
+**Foundation models:** AI systems trained on vast amounts of data (e.g., GPT-4, Claude, DALL-E). Think of them as very knowledgeable assistants who learned everything from books, but their knowledge is frozen at a specific point in time.
+
+**Knowledge cutoffs:** The point in time up to which an AI model has been trained.
+
+**Hallucination:** When AI generates plausible sounding but inaccurate or fabricated information.
+
+**Retrieval-Augmented Generation (RAG):** Technique that first searches trusted sources for relevant information, then generates answers grounded in that data.
+
+**Context grounding:** Supplying AI with accurate, up-to-date information from trusted sources to anchor responses in fact. This is the "research phase" that happens before the AI writes its answer.
+
+<br>
+
+### Key Benefits
+
+- **Reduces hallucinations** - Anchors responses in factual information from trusted sources
+- **Eliminates knowledge cutoffs** - Connects to current information sources
+- **Integrates current and proprietary information** - Securely leverages your organization's private data and up-to-date knowledge to ground responses in accurate, real-time context
+- **Provides transparency** - Every answer can cite its sources for verification
+- **Enables cost-effective updates** - Add new knowledge without retraining expensive models
+
+<br>
+
+
+# @title ## 🎯 Interactive *Exploration* { display-mode: "form" }
+
+## 💻 Lab - Full RAG vs. Standard LLM Comparison
+
+This code shows the difference between:
+1. **Standard LLM**: Uses only its training data to answer questions (knowledge cutoff problem)
+2. **RAG-Enhanced LLM**: First searches the web for current information, then uses it to generate accurate, up-to-date responses
+
+### Key Components:
+- **OpenAI API**: The large language model that generates responses
+- **Tavily API**: A search engine optimized for AI applications that retrieves real-time web information
+  - Tavily is specifically designed for LLMs, returning clean, relevant content
+  - It provides structured search results with relevance scores
+  - Better than general web scraping as it filters out ads, cookies notices, etc.
+
+### Why This Matters:
+- LLMs have knowledge cutoffs (can't know about recent events)
+- RAG solves this by adding a retrieval step before generation
+- You can verify information because sources are cited
+- Trade-off: Slightly slower but much more accurate for current events
+# @title ### Query Setup { display-mode: "form" }
+# @markdown Craft a prompt that’s **GUARANTEED** to slam into a knowledge cutoff. **Bonus points if it does so with flair.**
+
+user_prompt = "when was the last time Dinamo Bucharest won against FCSB?"  # @param {type:"string", required:true, placeholder:"Enter your query here..."}
+
+# @title ### Run the Code { display-mode: "form" }
+
+import os, time, json, textwrap
+import openai
+from tavily import TavilyClient
+
+# Used for retrieving secrets (Api Keys, passwords, etc)
+from google.colab import userdata
+
+ # Used for formatting the llm response
+from IPython.display import display, HTML
+
+# === Load API Keys from Colab Secrets ===
+openai.api_key = ""
+tavily = TavilyClient(api_key='')
+
+# === Define user prompt if not set in form ===
+if not user_prompt or user_prompt.strip() == "":
+  user_prompt = "How well did the launch of the Nintendo Switch 2 go? Limit your response to one paragraph."
+
+# === APPROACH 1: Direct LLM Call ===
+std_start = time.time()
+
+
+# Ask OpenAI directly without external context
+standard_response = openai.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": user_prompt}],
+    temperature=0
+)
+
+# Save response and metadata
+standard_result = {
+    "endpoint": "chat.completions",
+    "payload": {
+        "model": "gpt-4o-mini",
+        "messages": [{"role": "user", "content": user_prompt}],
+        "temperature": 0
+    },
+    "response": standard_response.choices[0].message.content.strip(),
+    "tokens_used": standard_response.usage.total_tokens,
+    "time": time.time() - std_start
+}
+
+# === APPROACH 2: RAG (Retrieval-Augmented Generation) ===
+rag_pipeline_start = time.time()
+
+# (a) Use Tavily to search the web for relevant info
+tavily_start = time.time()
+search_results = tavily.search(
+    query=user_prompt,
+    max_results=5,
+    include_answer=False,
+    include_raw_content=True
+)
+tavily_time = time.time() - tavily_start
+
+# (b) Format retrieved results into context blocks
+context_chunks = [
+    f"[Source{i+1}] {hit['title']}\n{hit['content'] or hit['snippet']}"
+    for i, hit in enumerate(search_results["results"])
+]
+context_block = "\n\n---\n\n".join(context_chunks)
+
+# (c) Ask OpenAI using the retrieved context
+rag_prompt = [
+    {
+        "role": "system",
+        "content": (
+            "You are a helpful assistant. Answer the user’s question using ONLY the facts in "
+            "the provided sources. Cite each statement with the source tag in square brackets "
+            "(e.g. [Source1])."
+        ),
+    },
+    {"role": "user", "content": f"Question: {user_prompt}\n\nSources:\n{context_block}"},
+]
+
+openai_start = time.time()
+rag_response = openai.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=rag_prompt,
+    temperature=0
+)
+openai_time = time.time() - openai_start
+
+# Save RAG response and metadata
+rag_results = {
+    "tavily": {
+        "endpoint": "search",
+        "payload": {"query": user_prompt, "max_results": 5},
+        "response": search_results,
+        "time": tavily_time,
+    },
+    "openai": {
+        "endpoint": "chat.completions",
+        "payload": {"model": "gpt-4o-mini", "messages": rag_prompt, "temperature": 0},
+        "response": rag_response.choices[0].message.content.strip(),
+        "tokens_used": rag_response.usage.total_tokens,
+        "time": openai_time,
+    },
+    "pipeline": {
+        "sources_count": len(context_chunks),
+        "context": context_block,
+        "total_time": time.time() - rag_pipeline_start,
+    },
+}
+
+# === Display results for comparison ===
+# NOTE: This is just for educational/demo purposes to visualize differences
+def render_responses():
+    def print_md(label, content, tokens=None, elapsed=None):
+        html = f"<h3>{label}</h3>"
+        if tokens or elapsed:
+            meta = []
+            if tokens: meta.append(f"<strong>Tokens:</strong> {tokens}")
+            if elapsed: meta.append(f"<strong>Time:</strong> {elapsed:.2f}s")
+            html += "<p>" + " &nbsp;|&nbsp; ".join(meta) + "</p>"
+
+        html += f"""
+        <pre style="
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            width: 28%;
+            box-sizing: border-box;
+            overflow: hidden;
+        ">{content}</pre>
+        """
+        display(HTML(html))
+
+    display(HTML("<h2>✅ Responses</h2>"))
+    print_md("Standard OpenAI Response", standard_result["response"], standard_result["tokens_used"], standard_result["time"])
+    print_md("RAG-Enhanced Response", rag_results["openai"]["response"], rag_results["openai"]["tokens_used"], rag_results["openai"]["time"])
+
+
+# Call the visualization function
+render_responses()
+
+# @title ## 🧠 Behind the Scenes: Understanding the Response { display-mode: "form" }
+
+# Utility class for formatting and displaying the responses, metadata, and comparisons.
+
+import json
+import textwrap
+
+class PrettyPrinter:
+    def __init__(self, width: int = 90):
+        self.width = width
+        self.wrapper = textwrap.TextWrapper(
+            width=self.width - 4,
+            break_long_words=False,
+            break_on_hyphens=False
+        )
+
+    def print_header(self, text: str, symbol: str = "="):
+        print(f"\n{symbol * self.width}")
+        print(f"{text.center(self.width)}")
+        print(f"{symbol * self.width}")
+
+    def print_subheader(self, text: str, symbol: str = "-"):
+        print(f"\n{text}")
+        print(symbol * len(text))
+
+    def print_wrapped(self, text: str, indent: str = "  "):
+        for line in text.split('\n'):
+            if line.strip():
+                wrapped = self.wrapper.fill(line)
+                for l in wrapped.split('\n'):
+                    print(f"{indent}{l}")
+            else:
+                print()
+
+    def print_box(self, title: str, content: str):
+        print(f"\n╭{'─' * (self.width - 2)}╮")
+        print(f"│ {title:<{self.width - 4}} │")
+        print(f"├{'─' * (self.width - 2)}┤")
+        for line in self.wrapper.fill(content).split('\n'):
+            print(f"│ {line:<{self.width - 4}} │")
+        print(f"╰{'─' * (self.width - 2)}╯")
+
+    def print_api_call(self, service: str, endpoint: str, payload: dict):
+        print(f"\n🔌 {service} API CALL")
+        print("┌" + "─" * (self.width - 2) + "┐")
+        print(f"│ Endpoint: {endpoint:<{self.width - 13}}│")
+        print("├" + "─" * (self.width - 2) + "┤")
+        try:
+            payload_str = json.dumps(payload, indent=2)
+            for raw_line in payload_str.split('\n'):
+                for line in self.wrapper.fill(raw_line).split('\n'):
+                    print(f"│ {line:<{self.width - 4}} │")
+        except Exception as e:
+            print(f"│ [Payload Display Failed: {str(e)}] │")
+        print("└" + "─" * (self.width - 2) + "┘")
+
+    def print_tavily_results(self, results: dict, elapsed_time: float):
+        print(f"\n🔍 TAVILY SEARCH RESULTS (Retrieved in {elapsed_time:.2f}s)")
+        print("━" * self.width)
+        for i, result in enumerate(results['results']):
+            print(f"\n📄 Result {i + 1}:")
+            print(f"   Title: {result['title']}")
+            print(f"   URL: {result['url']}")
+            print(f"   Score: {result.get('score', 'N/A')}")
+            self.print_wrapped("Content Preview:\n" + result['content'][:300] + "...", "      ")
+
+    def print_response(self, service: str, response: str, time: float, tokens: int = None):
+        print(f"\n✅ {service} RESPONSE (Generated in {time:.2f}s)")
+        if tokens:
+            print(f"   Tokens used: {tokens}")
+        print("━" * self.width)
+        self.print_wrapped(response, "   ")
+        print("━" * self.width)
+
+    def print_comparison_summary(self, std: dict, rag: dict):
+        self.print_header("📊 COMPARISON SUMMARY", "═")
+        print("\n┌" + "─" * 38 + "┬" + "─" * 39 + "┐")
+        print("│" + " STANDARD LLM ".center(38) + "│" + " RAG-ENHANCED ".center(39) + "│")
+        print("├" + "─" * 38 + "┼" + "─" * 39 + "┤")
+        print(f"│ Response Time: {std['time']:>20.2f}s │ Response Time: {rag['pipeline']['total_time']:>20.2f}s  │")
+        print(f"│ Characters: {len(std['response']):>24} │ Characters: {len(rag['openai']['response']):>24}  │")
+        print(f"│ Tokens used: {std['tokens_used']:>23} │ Tokens used: {rag['openai']['tokens_used']:>23}  │")
+        print(f"│ Sources cited: {0:>21} │ Sources cited: {rag['openai']['response'].count('[Source'):>21}  │")
+        print("│ Knowledge: Training data only        │ Knowledge: Training + Real-time       │")
+        print("└" + "─" * 38 + "┴" + "─" * 39 + "┘")
+
+
+# ─── Display results using PrettyPrinter ───
+
+printer = PrettyPrinter(width=90)
+
+# Print overview and question
+printer.print_header("🔬 COMPARING STANDARD LLM vs RAG-ENHANCED RESPONSES", "═")
+printer.print_box("Question", user_prompt)
+
+# Standard LLM
+printer.print_header("APPROACH 1: STANDARD OPENAI (No External Data)", "─")
+printer.print_api_call("OpenAI", standard_result["endpoint"], standard_result["payload"])
+printer.print_response("OpenAI Standard", standard_result["response"], standard_result["time"], standard_result["tokens_used"])
+
+# RAG Pipeline
+printer.print_header("APPROACH 2: RAG-ENHANCED (With Real-Time Data)", "─")
+printer.print_subheader("🚀 RAG PIPELINE EXECUTION")
+printer.print_subheader("STEP 1: RETRIEVING CURRENT INFORMATION", "·")
+printer.print_api_call("Tavily", rag_results["tavily"]["endpoint"], rag_results["tavily"]["payload"])
+printer.print_tavily_results(rag_results["tavily"]["response"], rag_results["tavily"]["time"])
+
+printer.print_subheader("STEP 2: BUILDING CONTEXT FROM SEARCH RESULTS", "·")
+context_preview = f"Total sources: {rag_results['pipeline']['sources_count']}\nContext length: {len(rag_results['pipeline']['context'])} characters"
+printer.print_box("Context Info", context_preview)
+
+printer.print_subheader("STEP 3: GENERATING ENHANCED RESPONSE WITH CONTEXT", "·")
+printer.print_api_call("OpenAI Enhanced", rag_results["openai"]["endpoint"], rag_results["openai"]["payload"])
+printer.print_response("OpenAI RAG-Enhanced", rag_results["openai"]["response"], rag_results["openai"]["time"], rag_results["openai"]["tokens_used"])
+
+# Summary
+printer.print_comparison_summary(standard_result, rag_results)
+
+# Insights
+printer.print_header("💡 KEY INSIGHTS", "─")
+printer.print_wrapped("""
+1. STANDARD LLM:
+   • Uses only training data
+   • Fast response time
+   • No real-time updates
+   • No source attribution
+
+2. RAG-ENHANCED:
+   • Retrieves real-time information
+   • Slower due to retrieval + processing
+   • Includes citations
+   • Improves answer quality and traceability
+
+3. TRADE-OFFS:
+   • RAG adds ~2–3 seconds
+   • Uses more tokens
+   • Provides current, verifiable knowledge
+""")
+
+## 🚀 Knowledge Check
+
+**Question 1:** A company wants to build a chatbot that answers questions about their employee handbook, which gets updated monthly. Why would RAG be better than just using ChatGPT?
+
+<details>
+<summary>Discuss</summary>
+
+
+</details>
+
+**Question 2:** When might you NOT need RAG? Choose the best scenario:
+
+A) Building a customer support bot for a tech company  
+B) Creating a creative writing assistant for fiction authors  
+C) Developing a legal research assistant  
+D) Making a medical diagnosis assistant  
+
+<details>
+<summary>Discuss</summary>
+
+
+
+</details>
+
+**Question 3:** What are the three main problems RAG solves?
+
+<details>
+<summary>Discuss</summary>
+
+
+</details>
+
+</br>
+
+## 🎓 Section Summary & Progress Check
+
+### What You've Learned ✅
+- RAG solves three core problems: knowledge cutoffs, hallucinations, and lack of private data access
+- The fundamental workflow: retrieve relevant information, then generate grounded responses
+- When RAG is essential vs when it might be optional
+- How context grounding makes AI responses more reliable and verifiable
+
+### 🔗 Connection to Next Section
+Now that you understand *why* RAG is important, Section 2 will show you *how* to get information into your own RAG system through document ingestion and preprocessing. We'll transform messy real-world documents into clean, structured knowledge that your AI can reliably use.
+
+### Self-Assessment Questions
+Before continuing, make sure you can answer:
+1. What are the three main problems RAG solves?
+2. Why can't you just use ChatGPT for your company's internal knowledge base?
+3. What makes RAG responses more trustworthy than regular LLM responses?
+
+*If any of these feel unclear, take a moment to review the sections above before moving forward.*
+
+---
+
+## 💪 Ready for Hands-On Practice?
+
+In the next section, you'll practice:
+- Ingesting different document types (PDFs, CSVs, web pages)
+- Cleaning and preprocessing real messy data
+- Extracting useful metadata for better retrieval
+- Identifying and fixing common preprocessing errors
+
+Ready to get your hands dirty with real data? Let's continue to Section 2!
+<br>
+<br>
+<div class="markdown-google-sans">
+
+# **Section 2: Document Ingestion & Preprocessing**
+</div>
+
+## 🎯 Learning Objectives
+
+>By the end of this section, you will:
+- **Process** multiple document formats (PDF, CSV, HTML, JSON) into clean text
+- **Preserve** important structure like tables and lists during conversion
+- **Extract** valuable metadata for better retrieval and filtering
+- **Identify** common preprocessing pitfalls and how to avoid them
+- **Debug** document parsing issues using systematic approaches
+
+<br>
+
+## 💡 The Document Preparation Analogy
+
+This stage is like the librarian receiving new books and preparing them for the shelves. The librarian:
+
+1. **Removes the plastic wrap** (encoding fixes)
+2. **Repairs damaged pages** (error handling)  
+3. **Adds catalog cards** (metadata extraction)
+4. **Removes promotional inserts** (noise removal)
+5. **Checks for missing pages** (validation)
+6. **Organizes chapters properly** (structure preservation)
+
+Without this careful preparation, even the most knowledgeable librarian would struggle to find the right information when patrons ask questions.
+
+<br>
+
+## 📖 Overview
+
+### Understanding Document Ingestion
+
+The RAG pipeline begins with acquiring and preparing knowledge sources. This includes loading data from various formats such as files, databases, web pages, or APIs and using <font color='blue' size="3em">**parsers**</font> to clean and organize the content into a usable format. This is especially challenging when dealing with <font color='blue' size="3em">**unstructured data**</font> which makes up the majority of enterprise information.
+
+Getting this stage right is critical. Good preprocessing preserves not just the text but also important structural elements like tables and lists, along with <font color='blue' size="3em">**metadata**</font>. Poor preprocessing introduces noise and confusion, making it harder for the AI to find and use the right information later.
+
+<br>
+
+### Key Benefits
+- Preserves document structure (tables, lists)
+- Extracts useful metadata for filtering
+- Removes noise and irrelevant content
+- Ensures compliance by handling sensitive data
+
+<br>
+
+<img src="https://raw.githubusercontent.com/seffbright/rag-pipeline-course/refs/heads/main/images/section-2.png" alt="Document Ingestion Flow Diagram" style="width: 100%; border-radius: 10px;">
+<p style="text-align: center; margin-top: 10px;"><em>Document Ingestion Flow: Diverse source documents are processed by specialized parsers to extract clean text, structure, and metadata.</em></p>
+
+<br>
+
+## 🔍 Key Terms & Concepts
+
+**Unstructured data:** Content without a predefined data model or organization, such as emails, documents, and social media posts. Unlike structured data (databases, spreadsheets), unstructured data requires special processing to extract meaningful information.
+
+**Metadata:** Information about your data, such as source, creation date, author, and document title. This helps with filtering, ranking, and tracking where information came from.
+
+**Parser:** A software component (often a code library) that reads unstructured content, like documents or emails, and breaks it into meaningful parts, such as sections, titles, or keywords. This helps systems organize and understand the data more easily.
+
+**OCR (Optical Character Recognition):** Technology that converts images of text (like scanned documents or photos) into machine-readable text that can be processed and searched.
+
+**Schema:** The structure or format of data - like knowing that a CSV has columns for "date", "customer", and "issue" in that order.
+
+<br>
+
+## 🏗️ Document Type Strategies
+
+### 📄 PDF Files
+**Challenges:** Scanned text, complex layouts, embedded images
+>**Best Practices:**
+- Use OCR for scanned documents
+- Preserve page numbers for citations
+- Handle multi-column layouts carefully
+- Common library: PyMuPDF
+
+### 📊 CSV/Excel Files  
+**Challenges:** Large datasets, mixed data types, missing values
+>**Best Practices:**
+- Sample data first to understand structure
+- Handle missing values appropriately
+- Consider column relationships for text generation
+- Common library: pandas
+
+### 🌐 Web Pages
+**Challenges:** Ads, navigation, dynamic content
+>**Best Practices:**
+- Target main content areas (`<main>`, `<article>`)
+- Remove scripts, ads, and navigation
+- Preserve internal link structure when possible
+- Common library: BeautifulSoup
+
+### 🧾 JSON/API Data
+**Challenges:** Nested structures, varying schemas
+>**Best Practices:**
+- Flatten nested structures intelligently
+- Preserve key relationships
+- Handle array data appropriately
+- Common library: json, pydantic
+
+<br>
+
+## 📋 Good vs. Bad Preprocessing Examples
+
+### ✅ Example 1: Preserving Document Structure
+**Original (in HTML):**
+```html
+<table>
+  <tr><th>Name</th><th>Score</th></tr>
+  <tr><td>Chris</td><td>92</td></tr>
+  <tr><td>Sarah</td><td>88</td></tr>
+</table>
+```
+
+**Well-Processed (html2text library):**
+```
+Table: Name | Score
+-------------
+Chris   | 92
+Sarah   | 88
+```
+
+**Poorly Processed:**
+```
+Name Score Chris 92 Sarah 88
+```
+
+**Why structure matters:** The well-processed version maintains meaning, while the flattened version loses critical relationships that make data searchable and understandable.
+
+
+### ✅ Example 2: Metadata Extraction
+**From a PDF document:**
+- Title: "2025 Sales Forecast"
+- Author: "Jane Doe"
+- Created: Jan 12, 2024
+- Department: Revenue Ops
+
+**Good Metadata Extraction:**
+```json
+{
+  "title": "2025 Sales Forecast",
+  "author": "Jane Doe",
+  "created": "2024-01-12",
+  "department": "Revenue Ops",
+  "tags": ["Revenue", "Forecast", "Q1"]
+}
+```
+
+**Why metadata matters:** Enables filtering like "Show me all forecasts by Revenue Ops from Q1 2024" and provides context for better retrieval.
+</div>
+
+<br>
+
+## 🧪 Hands-On Debugging Exercise
+
+### Scenario: You're processing customer support tickets from a CSV file, but the RAG system is giving poor answers. Let's debug!
+
+**Given this CSV data:**
+```csv
+ticket_id,customer,subject,description,status,created_date
+T001,"ACME Corp","Login Issue","User can't access dashboard after password reset. Error: 403 Forbidden","Open","2024-1-28"
+T002,"TechCorp","","API timeout errors when calling /users/list endpoint","Closed","2024-31-1"
+```
+
+**Question:** What preprocessing issues do you notice?
+
+<details>
+<summary>Click to see the issues</summary>
+
+**Issues Found:**
+1. **Missing subject in T002** - Will make retrieval harder
+2. **Date format** - Use the same date format everywhere so time-based searches work correctly
+
+**Better preprocessing:**
+```python
+# Fill missing subjects
+if not row['subject']:
+    row['subject'] = f"Issue #{row['ticket_id']}"
+
+```
+</details>
+
+<br>
+
+
+# @title ## 🎯 Interactive *Exploration* { display-mode: "form" }
+## 💻 Lab - Preprocessing Pipeline
+
+This pipeline shows how to ingest and preprocess different document types for RAG:
+
+### Document Types We'll Process:
+1. **PDF Files**: Technical manuals, guides, documentation
+   - Extracts text while preserving structure
+   - Captures metadata (title, creation date, pages)
+   - Handles multi-page documents
+
+2. **CSV Files**: Support tickets, FAQs, structured data
+   - Converts rows into searchable documents
+   - Preserves column relationships
+   - Extracts metadata from other columns
+
+3. **Web Pages**: Online documentation, help articles
+   - Cleans HTML and extracts main content
+   - Removes ads, navigation, and clutter
+   - Captures meta tags and structure
+
+### Why Preprocessing Matters:
+- **Clean data = Better retrieval**: Removing noise improves search accuracy
+- **Metadata preservation**: Enables filtering and better context
+- **Consistent format**: All sources become uniformly structured documents
+- **Traceability**: Each chunk knows its origin for citations
+# @title ## Document Setup { display-mode: "form" }
+
+# Use our TechCorp sample documents created earlier
+data_dir = pipeline_state.sample_doc_dir if hasattr(pipeline_state, 'sample_doc_dir') else "/tmp/techcorp_docs"
+
+print(f"📁 Using TechCorp documents from: {data_dir}")
+print("📄 Documents to ingest:")
+for doc_path in pipeline_state.sample_doc_paths:
+    print(f"   - {os.path.basename(doc_path)}")
+
+# Additional documents can be added here
+website_1 = "https://www.technologycorporation.com/managed-services"  # @param {type:"string", "placeholder":"", "required":false}
+website_2 = "https://www.technologycorporation.com"  # @param {type:"string", "placeholder":"", "required":false}
+
+websites = [url for url in [website_1, website_2] if url.strip()]
+
+print(f"\n🌐 Additional websites to scrape: {len(websites)}")
+# @title ## Run the Code { display-mode: "form" }
+
+import PyPDF2
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+import json
+import os
+import glob
+import re
+
+class DocumentIngestionPipeline:
+    def ingest_pdf(self, path):
+        raw = open(path, 'rb').read()
+        content = raw[:500].decode(errors='ignore')
+        return [{
+            "doc_id": f"pdf-{hash(path)}",
+            "raw_content": content,
+            "content": content,
+            "metadata": {"type": "pdf", "source": path}
+        }]
+
+    def ingest_markdown(self, path):
+        """Ingest Markdown files - perfect for our TechCorp documents"""
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Extract title from first # heading
+            title_match = re.search(r'^# (.+)$', content, re.MULTILINE)
+            title = title_match.group(1) if title_match else os.path.basename(path)
+
+            return [{
+                "doc_id": f"md-{os.path.basename(path)}-{hash(path)}",
+                "raw_content": content,
+                "content": content,
+                "metadata": {
+                    "type": "markdown",
+                    "source": path,
+                    "title": title,
+                    "filename": os.path.basename(path)
+                }
+            }]
+        except Exception as e:
+            print(f"❌ Failed to load Markdown from {path}: {e}")
+            return []
+
+    def ingest_json(self, path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            raw = json.dumps(data)[:2000]
+            content = json.dumps(data, indent=2)[:2000]
+            return [{
+                "doc_id": f"json-{hash(path)}",
+                "raw_content": raw,
+                "content": content,
+                "metadata": {"type": "json", "source": path}
+            }]
+        except Exception as e:
+            print(f"❌ Failed to load JSON from {path}: {e}")
+            return []
+
+    def scrape_webpage(self, url):
+        """
+        Scrape meaningful content from a webpage while removing common boilerplate
+        like footers, navigation, copyright notices, etc.
+        """
+        try:
+            res = requests.get(url)
+            soup = BeautifulSoup(res.text, 'html.parser')
+
+            # --- Remove structural noise from the DOM ---
+            for tag in soup(['footer', 'nav', 'aside', 'script', 'style']):
+                tag.decompose()  # Removes entire tag and its contents
+
+            # Remove common boilerplate by class or ID name
+            for noisy in soup.select('.footer, .copyright, .terms, .disclaimer, #legal, #bottom'):
+                noisy.decompose()
+
+            # --- Try to target the meaningful part of the page ---
+            main_content = (
+                soup.find('main') or
+                soup.find('article') or
+                soup.find('div', class_='content') or
+                soup.find('body')
+            )
+
+            # Extract visible text
+            text = main_content.get_text(separator='\n') if main_content else soup.get_text(separator='\n')
+
+            # Clean whitespace, remove strange characters
+            text = self._clean_text(text)
+
+            # Optionally remove any leftover boilerplate lines
+            #text = self._filter_lines(text)
+
+            return [{
+                "doc_id": f"web-{hash(url)}",
+                "raw_content": soup.text[:2000],  # Raw HTML for traceability
+                "content": text[:1000],           # Cleaned and truncated for embedding
+                "metadata": {
+                    "type": "webpage",
+                    "source": url
+                }
+            }]
+
+        except Exception as e:
+            print(f"❌ Failed to scrape {url}: {e}")
+            return []
+
+            try:
+                res = requests.get(url)
+                soup = BeautifulSoup(res.text, 'html.parser')
+
+                # Try structured extraction
+                main_content = soup.find('main') or soup.find('article') or soup.find('div', class_='content') or soup.find('body')
+                text = main_content.get_text() if main_content else soup.get_text()
+                text = self._clean_text(text)
+
+                return [{
+                    "doc_id": f"web-{hash(url)}",
+                    "raw_content": soup.text[:2000],
+                    "content": text[:1000],
+                    "metadata": {"type": "webpage", "source": url}
+                }]
+            except Exception as e:
+                print(f"❌ Failed to scrape {url}: {e}")
+            return []
+
+    def ingest_csv(self, path):
+        df = pd.read_csv(path)
+        raw = open(path, 'r', encoding='utf-8').read()
+        content = df.to_csv(index=False)
+        return [{
+            "doc_id": f"csv-{hash(path)}",
+            "raw_content": raw,
+            "content": content,
+            "metadata": {"type": "csv", "source": path}
+        }]
+
+    def _clean_text(self, text: str) -> str:
+        """Clean and normalize text"""
+        text = re.sub(r'\s+', ' ', text)
+        text = re.sub(r'[^\w\s\.\,\!\?\-\:\;\(\)\[\]\/\']', '', text)
+        text = re.sub(r' +', ' ', text)
+        return text.strip()
+
+# Initialize pipeline
+pipeline = DocumentIngestionPipeline()
+all_documents = []
+
+# Reset the state's documents
+pipeline_state.raw_documents = []
+pipeline_state.document_stats = {}
+
+print("🚀 Starting TechCorp document ingestion...\n")
+
+# Ingest our TechCorp Markdown documents
+markdown_files = glob.glob(os.path.join(data_dir, "*.md"))
+for path in markdown_files:
+    docs = pipeline.ingest_markdown(path)
+    if docs:
+        all_documents.extend(docs)
+        # Add to pipeline state
+        for doc in docs:
+            pipeline_state.add_document(doc)
+
+# Also check for PDFs
+pdf_files = glob.glob(os.path.join(data_dir, "*.pdf"))
+for path in pdf_files:
+    docs = pipeline.ingest_pdf(path)
+    if docs:
+        all_documents.extend(docs)
+        for doc in docs:
+            pipeline_state.add_document(doc)
+
+# JSON Files
+json_files = glob.glob(os.path.join(data_dir, "*.json"))
+for path in json_files:
+    docs = pipeline.ingest_json(path)
+    if docs:
+        all_documents.extend(docs)
+        for doc in docs:
+            pipeline_state.add_document(doc)
+
+# Web Pages (skip if demo URLs)
+for url in websites:
+    if "technology" in url:  # Only scrape actual TechCorp sites
+        docs = pipeline.scrape_webpage(url)
+        if docs:
+            all_documents.extend(docs)
+            for doc in docs:
+                pipeline_state.add_document(doc)
+
+# CSV Files
+csv_files = glob.glob(os.path.join(data_dir, "*.csv"))
+for path in csv_files:
+    docs = pipeline.ingest_csv(path)
+    if docs:
+        all_documents.extend(docs)
+        for doc in docs:
+            pipeline_state.add_document(doc)
+
+# Summary
+print(f"\n✅ Ingested {len(all_documents)} total documents")
+print(f"\n📊 Document Statistics:")
+for doc_type, count in pipeline_state.document_stats.items():
+    print(f"   - {doc_type}: {count} documents")
+
+
+# @title ## 🧠 Behind the Scenes: Ingestion Digestion { display-mode: "form" }
+
+import textwrap
+from urllib.parse import urlparse
+
+def print_ingestion_summary(documents, pipeline_state, max_preview_len=200, width=90):
+    wrapper = textwrap.TextWrapper(width=width - 6)
+
+    print("\n" + "=" * width)
+    print("TECHCORP KNOWLEDGE BASE INGESTION COMPLETE".center(width))
+    print("=" * width)
+
+    print(f"\n📊 Total Documents Processed: {len(documents)}")
+
+    print("\n💡 KEY INSIGHTS:")
+    print("• Each document represents a critical piece of TechCorp's internal knowledge")
+    print("• Documents are structured for easy navigation and retrieval")
+    print("• Consistent formatting enables reliable information extraction")
+
+    print(f"\n📋 Document Structure Preview:")
+    for i, doc in enumerate(documents[:6]):  # Show first 6 docs
+        print("\n" + "-" * width)
+
+        doc_type = doc['metadata']['type']
+        title = doc['metadata'].get('title', None)
+
+        # Fallback logic for webpage titles
+        if doc_type == 'webpage' and not title:
+            title = "Webpage"
+        elif not title:
+            title = 'Untitled'
+
+        print(f"📎 Document {i+1}: {title}")
+        print("-" * width)
+
+        print(f"\n🧾 METADATA")
+        print(f"• ID       : {doc['doc_id']}")
+        print(f"• Type     : {doc_type}")
+
+        # Show filename for files, domain for webpages
+        source = doc['metadata']['source']
+        if doc_type == 'webpage':
+            domain = urlparse(source).netloc
+            print(f"• Domain   : {domain}")
+        else:
+            print(f"• Filename : {doc['metadata'].get('filename', 'N/A')}")
+            print(f"• Source   : {os.path.basename(source)}")
+
+        print(f"\n📄 CONTENT PREVIEW")
+        content = doc['content']
+        headers = re.findall(r'^##? (.+)$', content, re.MULTILINE)[:5]
+        if headers:
+            print("   Key Sections:")
+            for header in headers:
+                print(f"   • {header}")
+        else:
+            preview = content[:max_preview_len].strip()
+            for line in wrapper.wrap(preview):
+                print(f"  {line}")
+
+        word_count = len(content.split())
+        line_count = content.count('\n')
+        print(f"\n📊 Stats: {word_count:,} words, {line_count} lines")
+
+    print(f"\n🎯 USE CASE ALIGNMENT:")
+    print("• Employee Handbook → HR queries and policy questions")
+    print("• IT Security Policy → Security compliance and procedures")
+    print("• API Documentation → Technical implementation questions")
+    print("• Troubleshooting Guide → Support and debugging assistance")
+
+    print(f"\n✅ Ready for chunking: {len(documents)} clean, structured documents")
+    print(f"💾 State saved in pipeline_state object for continuity")
+
+# Run the visualization
+print_ingestion_summary(all_documents, pipeline_state)
+
+# Add a debugging helper
+print("\n🔍 DEBUGGING HELPERS:")
+print("• View document list: pipeline_state.raw_documents")
+print("• Check specific doc: all_documents[0]")
+print("• Document stats: pipeline_state.document_stats")
+print("• Generate report: print(pipeline_state.generate_summary_report())")
+
+## 🚀 Knowledge Check Questions
+
+**Question 1:** Why is preserving document structure (like tables) important for RAG systems?
+
+<details>
+<summary>Discuss</summary>
+</details>
+
+**Question 2:** You're processing patient medical records, and the RAG system keeps missing critical drug dosage information that's clearly present. What's most likely wrong?
+
+A) The chunking strategy is too aggressive  
+B) The embedding model doesn't understand medical terms  
+C) Table extraction is failing during preprocessing  
+D) The documents are too long for processing  
+
+<details> <summary>Discuss</summary>
+</details>
+
+**Question 3:** What's the difference between content and metadata in document preprocessing?
+
+<details>
+<summary>Discuss</summary>
+
+</details>
+
+## 🎓 Section Summary & Progress Check
+
+### What You've Learned ✅
+- How to process multiple document formats into clean, structured text
+- The importance of preserving structure (tables, lists) and extracting metadata
+- Common preprocessing challenges and how to solve them
+- A systematic approach to debugging document ingestion issues
+- Performance tips for handling large document collections
+
+### 🔗 Connection to Next Section
+Now that you have clean, structured documents, Section 3 will show you how to break them into optimal chunks for retrieval. We'll explore different chunking strategies and learn when to use each approach for maximum retrieval performance.
+
+### Self-Assessment Questions
+Before continuing, make sure you can:
+1. Explain why preserving document structure matters for RAG
+2. Identify at least 3 common preprocessing pitfalls
+3. Describe the difference between content and metadata
+4. Debug a simple document parsing issue
+
+*If you're unsure about any of these, review the relevant sections above.*
+
+---
+
+## 💪 Practice Challenge
+
+Try this before moving on:
+
+**Challenge:** You have a PDF with a table of product specifications, but after processing, the RAG system can't answer "What's the warranty period for Product X?"
+
+**Your task:** What preprocessing steps would you check? How would you verify the table was extracted correctly?
+
+<details>
+<summary>Discuss</summary>
+</details>
+
+Ready to learn about optimal text chunking strategies? Let's continue to Section 3!
+# Section 3: Text Chunking Strategies
+
+## 🎯 Learning Objectives
+
+>By the end of this section, you will:
+- **Choose** the optimal chunking strategy based on your content type and use case
+- **Balance** chunk size with context preservation for maximum retrieval performance
+- **Implement** overlap strategies to maintain information continuity
+- **Evaluate** chunk quality using practical metrics and techniques
+- **Tune** chunking parameters through systematic experimentation
+
+<br>
+
+## 💡 The Goldilocks Principle Analogy
+
+Just like Goldilocks finding the perfect porridge, chunking is about finding what's "just right" for your specific use case.
+
+**🔍 Too Small Chunks** (50-100 tokens per chunk)
+```
+Chunk 1: "To reset your password, first navigate to the login page."
+Chunk 2: "Click on 'Forgot Password' link below the login form."
+Chunk 3: "Enter your email address in the field provided."
+```
+**Problems:** Loses context between steps, hard to get complete instructions
+
+**🎯 Just Right Chunks** (300-500 tokens per chunk)
+```
+Chunk 1: "Password Reset Process: To reset your password, first navigate to the login page and click 'Forgot Password'. Enter your email address and click 'Send Reset Link'. Check your email for the reset message, which may take up to 5 minutes to arrive. Click the link in the email to create a new password."
+```
+**Benefits:** Complete logical units, sufficient context, efficient retrieval
+
+**🚫 Too Large Chunks** (1000+ tokens per chunk)  
+```
+Chunk 1: "Account Management Guide: Creating accounts, logging in, password resets, profile updates, notification settings, privacy controls, account deletion, data export..."
+```
+**Problems:** Dilutes relevant information with noise, may exceed model context limits
+
+<br>
+
+## 📖 Overview
+
+### Understanding Text Chunking
+
+Chunking is a key step in making documents usable for RAG systems. Because language models have a limited <font color='blue' size="3em">**context window**</font>, we can't give them huge documents all at once. Instead, we split the text into smaller, <font color='blue' size="3em">**indexable**</font> parts like we would a long book into chapters or sections.
+
+There are different ways to split documents. You can divide them based on <font color='blue' size="3em">**tokens**</font>, words, or characters, or use natural <font color='blue' size="3em">**semantic boundaries**</font> like sentences, paragraphs, or sections.
+
+The way you split, known as a <font color='blue' size="3em">**chunking strategy**</font>, affects how well the system understands and retrieves the content. If your chunks are too small, you might lose important context. If they're too big, you might add noise or go over the model's input limit. To preserve <font color='blue' size="3em">**semantic coherence**</font>, it's important to avoid splitting in the middle of meaningful units like a list, example, or explanation. Many pipelines also use <font color='blue' size="3em">**overlap**</font> between chunks to maintain continuity across boundaries.
+
+A good chunking strategy balances size, structure, and meaning to ensure that chunks are both complete in thought and efficient for retrieval and generation.
+
+<br>
+
+### The Chunking Trade-Offs
+
+**Granularity vs Context:**
+- **Fine chunks** (100-200 tokens): Precise matching but may miss broader context
+- **Medium chunks** (300-500 tokens): Balanced approach for most use cases  
+- **Large chunks** (800-1200 tokens): Rich context but may introduce noise
+
+**Example: Answering "How do I reset my password?"**
+- **Too small:** Chunk has "click Reset" but not the full process
+- **Just right:** Complete step-by-step instructions in one chunk
+- **Too large:** Password reset steps mixed with account setup info
+
+<br>
+
+<img src="https://raw.githubusercontent.com/seffbright/rag-pipeline-course/refs/heads/main/images/section-3.png" alt="Text Chunking Process" style="width: 100%; border-radius: 10px;">
+<p style="text-align: center; margin-top: 10px;"><em>Chunking Process Example: The original document is split into overlapping chunks (highlighted text shows overlap), each retaining metadata.</em></p>
+
+<br>
+
+## 🔍 Key Terms & Concepts
+
+**Context window:** The maximum amount of text (input prompt + generated output) an LLM can process at one time, typically measured in tokens (roughly words/syllables).
+
+**Indexable:** Easy to store, search, and retrieve. These are chunks of content that are small enough to fit in search systems and big enough to still make sense.
+
+**Tokens:** Tiny pieces of text that the AI reads. This is sometimes full words, sometimes just parts. For example, "chunking" might be one token, but "internationalization" might be split into many.
+
+**Semantic boundaries:** Natural breaks in language flow like sentence endings, paragraph breaks, or section headers where splitting won't disrupt meaning.
+
+**Chunking strategy:** The systematic approach to splitting documents - the rules and methods that determine where and how to break up text.
+
+**Semantic coherence:** How well a chunk maintains complete meaning. High coherence means the chunk contains complete thoughts rather than cutting them off midway.
+
+**Overlap:** Repeating some content between adjacent chunks to preserve context and ensure important information isn't lost at boundaries.
+
+<br>
+
+## 🔬 Chunking Strategies Deep Dive
+
+### 1. **Fixed-Size Chunking**
+**How it works:** Split every N tokens/characters regardless of content
+```python
+# Example: Every 400 tokens
+chunks = [text[i:i+400] for i in range(0, len(text), 400)]
+```
+
+**Pros:** Predictable, simple, consistent size
+
+**Cons:** May break sentences/thoughts mid-way
+
+**Best for:** Large datasets where speed matters more than perfect boundaries
+
+</br>
+
+### 2. **Semantic Boundary Chunking**
+**How it works:** Split at natural language boundaries (sentences, paragraphs)
+```python
+# Example: Paragraph boundaries
+chunks = text.split('\n\n')
+```
+**Pros:** Preserves meaning, natural breakpoints
+
+**Cons:** Variable chunk sizes, may be too small/large
+
+**Best for:** Human-authored content like articles, books
+
+</br>
+
+### 3. **Recursive Chunking (LangChain's Approach)**
+**How it works:** Try multiple separators in order of preference
+```python
+separators = ['\n\n', '\n', '. ', ' ', '']  # Paragraph -> sentence -> word -> character
+```
+**Pros:** Best of both worlds - semantic awareness with size control
+
+**Cons:** More complex to implement and tune
+
+**Best for:** Mixed content types, production systems
+
+</br>
+
+### 4. **Content-Aware Chunking**
+**How it works:** Parse document structure (headers, sections) and chunk accordingly
+```python
+# Example: Split by headers
+chunks = split_by_headers(markdown_text, headers=['#', '##', '###'])
+```
+**Pros:** Respects document structure, logical groupings
+
+**Cons:** Requires parsing, document-specific logic
+
+**Best for:** Structured documents, wikis, documentation
+
+</br>
+
+## 💻 Lab - Adaptive Text Chunking Strategies
+
+This lab illustrates how to split documents into smaller pieces (“chunks”) for indexing and retrieval using RAG.
+
+### Key Strategies:
+- **Token-Based Chunking**: Evenly-sized segments for generic content  
+- **Sentence Chunking**: Maintains meaning and context for troubleshooting or conversational text  
+- **Paragraph Chunking**: Preserves formatting for structured content like policies  
+- **Adaptive Chunking**: Dynamically chooses the best strategy based on file type and content  
+
+### Key Components:
+- **tiktoken**: Tokenizer to measure chunk sizes  
+- **Overlap Control**: Ensures context isn’t lost across boundaries  
+- **Strategy Dictionary**: Custom rules per document  
+
+### Why This Matters:
+- Chunks that are too large waste tokens or fail to fit  
+- Chunks that are too small lose semantic meaning  
+- Smart chunking maximizes retrievability and reduces hallucinations  
+
+# @title Chunking Strategy Setup { display-mode: "form" }
+
+# Adaptive chunking based on document type
+# Different document types benefit from different strategies
+
+# Get chunking parameters from state or use defaults
+CHUNKING_STRATEGY = "tokens"  # @param ["tokens", "sentences", "paragraphs", "adaptive"]
+CHUNK_SIZE = 50  # @param {type:"integer"}
+CHUNK_OVERLAP = 10  # @param {type:"integer"}
+
+# Document-specific strategies
+DOC_STRATEGIES = {
+    "employee_handbook.md": {"strategy": "paragraphs", "size": 400, "overlap": 50},
+    "it_security_policy.md": {"strategy": "paragraphs", "size": 300, "overlap": 75},
+    "api_documentation.md": {"strategy": "tokens", "size": 500, "overlap": 100},
+    "troubleshooting_guide.md": {"strategy": "sentences", "size": 400, "overlap": 50}
+}
+
+print("📋 TechCorp Document Chunking Configuration:")
+print(f"   Default Strategy: {CHUNKING_STRATEGY}")
+print(f"   Default Chunk Size: {CHUNK_SIZE} tokens")
+print(f"   Default Overlap: {CHUNK_OVERLAP} tokens")
+
+print("\n📊 Document-Specific Strategies:")
+for doc_name, config in DOC_STRATEGIES.items():
+    print(f"   • {doc_name}: {config['strategy']} (size: {config['size']}, overlap: {config['overlap']})")
+
+# Update state
+pipeline_state.chunking_strategy = CHUNKING_STRATEGY
+pipeline_state.chunk_size = CHUNK_SIZE
+pipeline_state.chunk_overlap = CHUNK_OVERLAP
+# @title Run the Code { display-mode: "form" }
+
+from typing import List, Dict
+import tiktoken
+import re
+
+class AdaptiveTextChunker:
+    """Intelligent chunking that adapts to document type and structure"""
+
+    def __init__(self, default_chunk_size: int = 500, default_overlap: int = 50, encoding_name: str = "cl100k_base"):
+        self.default_chunk_size = default_chunk_size
+        self.default_overlap = default_overlap
+        self.encoding = tiktoken.get_encoding(encoding_name)
+        self.doc_strategies = DOC_STRATEGIES
+
+    def chunk_by_tokens(self, text: str, chunk_size: int = None, overlap: int = None) -> List[Dict]:
+        """Standard token-based chunking"""
+        chunk_size = chunk_size or self.default_chunk_size
+        overlap = overlap or self.default_overlap
+
+        tokens = self.encoding.encode(text)
+        chunks = []
+
+        for i in range(0, len(tokens), chunk_size - overlap):
+            chunk_tokens = tokens[i:i + chunk_size]
+            chunk_text = self.encoding.decode(chunk_tokens)
+            chunks.append({
+                'text': chunk_text,
+                'start_token': i,
+                'end_token': i + len(chunk_tokens),
+                'token_count': len(chunk_tokens)
+            })
+        return chunks
+
+    def chunk_by_sentences(self, text: str, target_size: int = None, overlap_sentences: int = 1) -> List[Dict]:
+        """Sentence-aware chunking - good for troubleshooting guides"""
+        target_size = target_size or self.default_chunk_size
+        sentences = re.split(r'(?<=[.!?])\s+', text)
+        chunks, current_chunk, current_size = [], [], 0
+
+        for sentence in sentences:
+            sentence_size = len(self.encoding.encode(sentence))
+
+            if current_size + sentence_size > target_size and current_chunk:
+                chunks.append({
+                    'text': ' '.join(current_chunk),
+                    'sentence_count': len(current_chunk),
+                    'token_count': current_size
+                })
+                # Keep last N sentences for overlap
+                current_chunk = current_chunk[-overlap_sentences:] if overlap_sentences > 0 else []
+                current_size = sum(len(self.encoding.encode(s)) for s in current_chunk)
+
+            current_chunk.append(sentence)
+            current_size += sentence_size
+
+        if current_chunk:
+            chunks.append({
+                'text': ' '.join(current_chunk),
+                'sentence_count': len(current_chunk),
+                'token_count': current_size
+            })
+        return chunks
+
+    def chunk_by_paragraphs(self, text: str, target_size: int = None, overlap_tokens: int = None) -> List[Dict]:
+        """Paragraph-aware chunking - good for policies and handbooks"""
+        target_size = target_size or self.default_chunk_size
+        overlap_tokens = overlap_tokens or self.default_overlap
+
+        # Split by double newlines or markdown headers
+        paragraphs = re.split(r'\n\n+|(?=^#{1,6} )', text, flags=re.MULTILINE)
+        chunks, current_chunk, current_size = [], [], 0
+
+        for para in paragraphs:
+            para = para.strip()
+            if not para:
+                continue
+
+            para_size = len(self.encoding.encode(para))
+
+            if current_size + para_size > target_size and current_chunk:
+                chunk_text = '\n\n'.join(current_chunk)
+                chunks.append({
+                    'text': chunk_text,
+                    'paragraph_count': len(current_chunk),
+                    'token_count': current_size
+                })
+
+                # Add overlap from the end of previous chunk
+                if overlap_tokens > 0 and chunks:
+                    overlap_text = chunk_text[-overlap_tokens:]
+                    current_chunk = [overlap_text]
+                    current_size = len(self.encoding.encode(overlap_text))
+                else:
+                    current_chunk, current_size = [], 0
+
+            current_chunk.append(para)
+            current_size += para_size
+
+        if current_chunk:
+            chunks.append({
+                'text': '\n\n'.join(current_chunk),
+                'paragraph_count': len(current_chunk),
+                'token_count': current_size
+            })
+        return chunks
+
+    def chunk_with_metadata(self, documents: List[Dict]) -> List[Dict]:
+        """Adaptive chunking based on document type and content"""
+        if not documents:
+            raise ValueError("❌ No documents found to chunk. Ensure documents are loaded.")
+
+        all_chunks = []
+
+        print(f"\n🔄 Adaptive chunking for {len(documents)} documents...")
+
+        for doc in documents:
+            # Determine strategy based on document
+            doc_filename = doc['metadata'].get('filename', '')
+            doc_type = doc['metadata'].get('type', '')
+
+            # Get document-specific strategy or use defaults
+            if doc_filename in self.doc_strategies:
+                strategy_config = self.doc_strategies[doc_filename]
+                strategy = strategy_config['strategy']
+                chunk_size = strategy_config['size']
+                overlap = strategy_config['overlap']
+                print(f"\n📄 {doc_filename}: Using {strategy} strategy (size: {chunk_size}, overlap: {overlap})")
+            else:
+                strategy = CHUNKING_STRATEGY
+                chunk_size = CHUNK_SIZE
+                overlap = CHUNK_OVERLAP
+                print(f"\n📄 {doc_filename}: Using default {strategy} strategy")
+
+            # Apply appropriate chunking method
+            if strategy == 'paragraphs':
+                chunks = self.chunk_by_paragraphs(doc['content'], chunk_size, overlap)
+            elif strategy == 'sentences':
+                chunks = self.chunk_by_sentences(doc['content'], chunk_size)
+            elif strategy == 'adaptive':
+                # Intelligent selection based on content analysis
+                if any(keyword in doc['content'].lower() for keyword in ['error', 'troubleshoot', 'issue', 'problem']):
+                    chunks = self.chunk_by_sentences(doc['content'], chunk_size)
+                elif any(keyword in doc['content'].lower() for keyword in ['policy', 'procedure', 'guidelines']):
+                    chunks = self.chunk_by_paragraphs(doc['content'], chunk_size, overlap)
+                else:
+                    chunks = self.chunk_by_tokens(doc['content'], chunk_size, overlap)
+            else:  # default to tokens
+                chunks = self.chunk_by_tokens(doc['content'], chunk_size, overlap)
+
+            # Add metadata to each chunk
+            for i, chunk in enumerate(chunks):
+                chunk_with_meta = {
+                    'chunk_id': f"{doc['doc_id']}_chunk_{i}",
+                    'doc_id': doc['doc_id'],
+                    'chunk_index': i,
+                    'total_chunks': len(chunks),
+                    'text': chunk['text'],
+                    'metadata': {
+                        **doc['metadata'],
+                        'chunk_strategy': strategy,
+                        'chunk_size_target': chunk_size
+                    },
+                    **{k: v for k, v in chunk.items() if k != 'text'}
+                }
+                all_chunks.append(chunk_with_meta)
+
+                # Add to pipeline state
+                pipeline_state.add_chunk(chunk_with_meta)
+
+            print(f"   ✅ Created {len(chunks)} chunks")
+
+        return all_chunks
+
+# Execute adaptive chunking
+chunker = AdaptiveTextChunker(
+    default_chunk_size=CHUNK_SIZE,
+    default_overlap=CHUNK_OVERLAP
+)
+
+# Clear previous chunks in state
+pipeline_state.chunks = []
+
+# Chunk all documents with adaptive strategies
+document_chunks = chunker.chunk_with_metadata(all_documents)
+
+print(f"\n✅ Total chunks created: {len(document_chunks)}")
+print(f"📊 Average chunk size: {sum(c.get('token_count', 0) for c in document_chunks) / len(document_chunks):.0f} tokens")
+
+# Preview different chunk types
+print("\n🔍 Chunk Strategy Distribution:")
+strategy_counts = {}
+for chunk in document_chunks:
+    strategy = chunk['metadata'].get('chunk_strategy', 'unknown')
+    strategy_counts[strategy] = strategy_counts.get(strategy, 0) + 1
+
+for strategy, count in strategy_counts.items():
+    print(f"   • {strategy}: {count} chunks")
+
+print("\n💡 Next: Generate embeddings for semantic search!")
+
+## 🚀 Knowledge Check Questions
+
+**Question 1:** What chunking strategy would work best?
+
+<details>
+<summary>Discuss</summary>
+</details>
+
+**Question 2:** Your RAG system works well for simple questions but struggles with complex queries that require understanding multiple related concepts. What's the most likely chunking issue?
+
+A) Chunks are too large and contain too much noise  
+B) Chunks are too small and lose important context  
+C) Overlap between chunks is too high  
+D) The chunking strategy doesn't respect semantic boundaries  
+
+<details>
+<summary>Discuss</summary>
+
+</details>
+
+**Question 3:** What's the main purpose of overlap in chunking strategies?
+
+<details>
+<summary>Discuss</summary>
+
+</details>
+
+## 🎓 Section Summary & Progress Check
+
+### What You've Learned ✅
+- How to choose optimal chunking strategies based on content type and use case
+- The trade-offs between chunk size, context preservation, and retrieval precision
+- Systematic approaches to evaluate and tune chunk quality
+- Performance optimization techniques for large-scale chunking
+- The importance of overlap for maintaining information continuity
+
+### 🔗 Connection to Next Section  
+Now that you have optimally-sized chunks with preserved context, Section 4 will show you how to convert them into semantic embeddings. We'll explore how different embedding models capture meaning and how to choose the right approach for your domain.
+
+### Self-Assessment Questions
+Before continuing, make sure you can:
+1. Explain when to use small vs. large chunks and why
+2. Choose an appropriate chunking strategy for a given content type
+3. Evaluate chunk quality using practical methods
+4. Implement overlap effectively without wasting resources
+
+*If any of these concepts feel unclear, review the relevant sections above.*
+
+---
+
+Ready to turn your well-crafted chunks into semantic vectors? Let's dive into embeddings in Section 4!
+
+<br>
+<br>
+
+# @title ## 🎯 Interactive *Exploration* { display-mode: "form" }
+
+# Section 4: Embedding Generation
+
+## 🎯 Learning Objectives
+
+By the end of this section, you will:
+>- **Understand** how embeddings capture semantic meaning in vector space
+- **Choose** the right embedding model for your domain and use case
+- **Evaluate** embedding quality using similarity tests and visualization
+- **Optimize** embedding generation for performance and cost
+- **Debug** common embedding issues like poor clustering or domain mismatch
+
+<br>
+
+## 💡 The Universal Translator Analogy
+
+Continuing our library analogy, embedding is like creating a detailed 3D map of all knowledge.
+
+Imagine the librarian creates a magical map where:
+- **Books about similar topics** appear close together in space
+- **Related concepts** form neighborhoods (Paris travel guides near Eiffel Tower books)
+- **Different languages** about the same topic still cluster together
+- **The distance between any two points** represents how related those concepts are
+
+This allows the librarian to quickly navigate to the right "region" of knowledge space, rather than searching through every book alphabetically. The embedding model is like the mapping system that determines where each piece of knowledge should be placed in this conceptual space.
+
+<br>
+
+## 📖 Overview
+
+### Understanding Embeddings
+
+To help AI find information based on meaning (not just matching words), we convert text into <font color='blue' size="3em">**number patterns (embeddings)**</font>. These patterns represent the ideas in the text, so similar concepts have similar patterns — this is known as <font color='blue' size="3em">**semantic similarity**</font>. It's like turning words into a language the AI can truly understand inside a <font color='blue' size="3em">**vector space**</font>.
+
+Each of these embeddings lives in a space with many directions. The number of directions is called its <font color='blue' size="3em">**dimensionality**</font>. More dimensions can mean more expressive power, but also more complexity.
+
+The type of <font color='blue' size="3em">**embedding model**</font> you use really matters. If the model isn't trained for your topic or language, it won't capture the right meaning, even if everything else in your system works well.
+
+It's like trying to read a translated book where the translation is wrong. You just won't understand it. That's why it's important to test your embeddings with real examples from your domain to ensure proper <font color='blue' size="3em">**domain adaptation**</font> for your specific use case.
+
+
+### The Magic of Vector Space
+
+Imagine a vast 3D space where every concept has a specific location. Similar ideas cluster together:
+- "Dog" and "puppy" are very close
+- "Cat" and "dog" are moderately close (both pets)
+- "Car" and "dog" are far apart
+- "King" - "man" + "woman" ≈ "Queen" (famous vector math!)
+
+In reality, embeddings use hundreds or thousands of dimensions, not just 3, allowing for incredibly nuanced relationships.
+
+<br>
+
+<img src="https://raw.githubusercontent.com/seffbright/rag-pipeline-course/refs/heads/main/images/section-4.png" alt="Embedding Process" style="width: 100%; border-radius: 10px;">
+<p style="text-align: center; margin-top: 10px;">
+<em>Embedding Process: Text chunks are fed into an embedding model, transforming them into high-dimensional vectors (glowing orbs). Similar concepts land close together in the vector space.</em></p>
+
+<br>
+
+### 🔍 Key Terms & Concepts
+
+**Number patterns (embeddings):** Special lists of numbers that represent the meaning of text. Think of them as coordinates on a map, where similar meanings are located close together, allowing AI to understand text like humans do.
+
+**Embedding model:** AI systems like OpenAI's text-embedding models or Google's models that convert text into these number patterns. Different models are better at understanding different types of content (like medical texts vs. everyday language).
+
+**Vector space:** The mathematical "space" where embeddings exist. Similar to a coordinate system, but with hundreds or thousands of dimensions instead of just X, Y, Z.
+
+**Semantic similarity:** How closely related two pieces of text are in meaning, measured by the distance between their embeddings in vector space.
+
+**Dimensionality:** The number of values in each embedding vector. More dimensions can capture more nuanced relationships but require more storage and computation.
+
+**Domain adaptation:** The process of adjusting embeddings to work better for specialized fields like medicine, law, or technical documentation.
+
+<br>
+
+## 🌟 Embedding Models: Choosing Your Translator
+
+### Popular Embedding Models Comparison
+
+| Model | Dimensions | Best For | Strengths | Limitations |
+|-------|------------|----------|-----------|-------------|
+| **OpenAI text-embedding-3-small** | 1536 | General use, cost-effective | Fast, affordable, good performance | Less nuanced than larger models |
+| **OpenAI text-embedding-3-large** | 3072 | High-quality retrieval | Excellent performance, multilingual | More expensive, slower |
+| **Sentence-BERT** | 384-1024 | Academic, fine-tuning | Open source, customizable | Requires more setup |
+| **Cohere Embed** | 4096 | Enterprise, multilingual | Strong multilingual support | API dependency |
+| **Google Universal Sentence Encoder** | 512 | Multilingual, code | Good for code and text | Limited customization |
+
+### Domain-Specific Considerations
+
+**For Technical Documentation:**
+- **Best choice:** OpenAI text-embedding-3-large or domain-fine-tuned models
+- **Why:** Technical terms need nuanced understanding
+
+**For Customer Support:**
+- **Best choice:** OpenAI text-embedding-3-small
+- **Why:** Good balance of cost and performance for common queries
+
+**For Legal Documents:**
+- **Best choice:** Fine-tuned legal embeddings or large general models
+- **Why:** Legal language is highly specialized
+
+**For Code Documentation:**
+- **Best choice:** Code-specific embeddings (CodeBERT) or Universal Sentence Encoder
+- **Why:** Understands both code and natural language
+
+<br>
+
+## 🔬 Embedding Quality Deep Dive
+
+### Test 1: Semantic Similarity Validation
+
+**Good embeddings should cluster related concepts:**
+
+```python
+# Example similarity scores (0-1, higher = more similar)
+similarities = {
+    ("password reset", "forgot password"): 0.85,  # ✅ High - same concept
+    ("login error", "authentication failed"): 0.78,  # ✅ High - related issues  
+    ("user manual", "documentation"): 0.72,  # ✅ Good - related content
+    ("password reset", "pizza recipe"): 0.12,  # ✅ Low - unrelated
+}
+```
+
+**Red flags to watch for:**
+- Related technical terms showing low similarity (< 0.5)
+- Unrelated concepts showing high similarity (> 0.6)
+- Synonyms not clustering together
+
+### Test 2: Domain Concept Clustering
+
+**Method:** Visualize embeddings in 2D space
+
+**What to look for:**
+- **Good clustering:** Related documents form visible groups
+- **Clear boundaries:** Different topics separate cleanly  
+- **Logical relationships:** Similar distances reflect conceptual similarity
+
+**Example visualization interpretation:**
+```
+     Customer Support Issues
+            🔵🔵🔵
+               🔵
+    
+Account Problems        Technical Errors
+    🟢🟢🟢              🔴🔴🔴
+    🟢🟢                🔴🔴
+    
+Good: Clear clusters, logical separation
+```
+
+### Test 3: Query-Document Matching Test
+
+**Create test queries and check if correct documents rank highest:**
+
+```python
+test_cases = [
+    {
+        "query": "How to reset my password?",
+        "expected_top_docs": ["password_reset_guide.pdf", "account_help.pdf"],
+        "should_not_appear": ["billing_info.pdf", "product_specs.pdf"]
+    }
+]
+```
+
+**Success criteria:**
+- Expected documents in top 3 results: 80%+ success rate
+- Irrelevant documents in top 5: <10% occurrence
+
+<br>
+
+## 🎯 Hands-On Embedding Exploration
+
+### Experiment 1: Similarity Explorer
+
+**Try these text pairs and predict their similarity scores:**
+
+1. **"API authentication error"** vs **"Login failed message"**
+   - Your prediction: ___
+   - Actual result: ~0.75 (High - both about auth issues)
+
+2. **"Python programming tutorial"** vs **"JavaScript coding guide"**  
+   - Your prediction: ___
+   - Actual result: ~0.68 (Medium-high - both programming content)
+
+3. **"Password reset instructions"** vs **"Chocolate cake recipe"**
+   - Your prediction: ___
+   - Actual result: ~0.15 (Very low - completely unrelated)
+
+**What this teaches:** Good embeddings capture semantic meaning beyond just word matching.
+
+### Experiment 2: Domain Adaptation Test
+
+**Scenario:** You're building a RAG system for a medical practice. Test these medical terms:
+
+```python
+medical_terms = [
+    "myocardial infarction",
+    "heart attack",
+    "cardiac arrest",
+    "chest pain",
+    "hypertension",
+    "high blood pressure"
+]
+```
+
+**Expected clustering:**
+- "myocardial infarction" ↔ "heart attack" (same thing, different terms)
+- "hypertension" ↔ "high blood pressure" (same condition)
+- "heart attack" ↔ "cardiac arrest" (related but different conditions)
+
+<br>
+
+
+## 💻 Lab - Embedding Generation for Semantic Search
+
+### What This Code Demonstrates
+
+This section generates dense vector embeddings for each text chunk produced in the previous **Text Chunking** lab. These embeddings allow for semantic similarity matching in downstream retrieval tasks.
+
+### Key Capabilities Demonstrated:
+1. **Batch Embedding Requests**:
+   - Efficiently sends text in batches to OpenAI’s Embedding API.
+   - Prevents rate-limit issues with controlled timing.
+
+2. **Result Caching**:
+   - Prevents redundant API calls by saving previously seen text embeddings.
+   - Speeds up experimentation when re-running cells.
+
+3. **Enrichment with Metadata**:
+   - Stores model name and dimensionality alongside the embedding.
+   - Adds traceability for downstream debugging and compatibility checks.
+
+4. **Cosine Similarity Function**:
+   - Supports chunk-to-chunk or query-to-chunk similarity analysis.
+   - Enables later steps like ranking or filtering results.
+
+---
+
+### How This Builds on the Previous Lab
+
+This code directly builds on the output of the **Text Chunking** step by:
+
+- Taking `document_chunks` as input (already cleaned and segmented).
+- Transforming them into semantic vectors using an embedding model.
+- Preparing each chunk for insertion into a vector database.
+
+This prepares the dataset for retrieval-augmented generation (RAG) workflows by giving the system a structured and searchable memory of the document corpus.
+
+# @title Run the Code { display-mode: "form" }
+
+import openai
+from google.colab import userdata
+
+openai.api_key = ""
+import numpy as np
+from typing import List, Dict
+import time
+
+class EmbeddingGenerator:
+    """Generate and manage embeddings for text chunks"""
+
+    def __init__(self, model: str = "text-embedding-3-small", batch_size: int = 100):
+        self.model = model
+        self.batch_size = batch_size
+        self.embedding_cache = {}
+
+    def generate_embedding(self, text: str) -> List[float]:
+        if text in self.embedding_cache:
+            return self.embedding_cache[text]
+
+        response = openai.embeddings.create(model=self.model, input=text)
+        embedding = response.data[0].embedding
+        self.embedding_cache[text] = embedding
+        return embedding
+
+    def generate_embeddings_batch(self, texts: List[str]) -> List[List[float]]:
+        embeddings = []
+        for i in range(0, len(texts), self.batch_size):
+            batch = texts[i:i + self.batch_size]
+            try:
+                response = openai.embeddings.create(model=self.model, input=batch)
+                batch_embeddings = [item.embedding for item in response.data]
+                embeddings.extend(batch_embeddings)
+                time.sleep(0.1)  # Respect rate limits
+            except Exception as e:
+                print(f"Error generating embeddings: {e}")
+                embeddings.extend([None] * len(batch))
+        return embeddings
+
+    def process_chunks_with_embeddings(self, chunks: List[Dict]) -> List[Dict]:
+        total_chunks = len(chunks)
+        print(f"🔄 Generating embeddings for {total_chunks} chunks...")
+
+        texts = [chunk['text'] for chunk in chunks]
+        embeddings = self.generate_embeddings_batch(texts)
+
+        enhanced_chunks = []
+        for chunk, embedding in zip(chunks, embeddings):
+            if embedding:
+                chunk_with_embedding = chunk.copy()
+                chunk_with_embedding['embedding'] = embedding
+                chunk_with_embedding['embedding_model'] = self.model
+                chunk_with_embedding['embedding_dim'] = len(embedding)
+                enhanced_chunks.append(chunk_with_embedding)
+
+        print(f"✅ Generated embeddings for {len(enhanced_chunks)} chunks")
+        return enhanced_chunks
+
+    def calculate_similarity(self, embedding1: List[float], embedding2: List[float]) -> float:
+        vec1 = np.array(embedding1)
+        vec2 = np.array(embedding2)
+        return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+
+# Instantiate generator
+embedding_gen = EmbeddingGenerator(model=EMBEDDING_MODEL)
+
+# Generate embeddings (LIMITED TO FIRST 5 FOR DEBUGGING)
+chunks_with_embeddings = embedding_gen.process_chunks_with_embeddings(document_chunks[:5])  # TEMP: limit to 5
+
+# @title 🧠 Behind the Scenes: Visualizing Embedding Payload (as JSON) { display-mode: "form" }
+from IPython.display import display, Markdown
+import json
+
+def show_embedding_payload_format(chunks: List[Dict], num_samples: int = 1):
+    if not chunks:
+        display(Markdown("⚠️ **No embeddings found to display.**"))
+        return
+
+    display(Markdown(
+        f"## Embedding Payload Overview\n"
+        f"Displaying the structure of **{num_samples}** processed document chunk(s) with vector embeddings and metadata."
+    ))
+
+
+    for i, chunk in enumerate(chunks[:num_samples]):
+        embedding = chunk.get("embedding", [])
+        if not embedding:
+            continue
+
+        payload = {
+            "chunk_id": chunk["chunk_id"],
+            "doc_id": chunk["doc_id"],
+            "chunk_index": chunk["chunk_index"],
+            "text": chunk["text"][:200] + "...",  # shortened for readability
+            "token_count": chunk.get("token_count", "N/A"),
+            "metadata": {
+                "type": chunk["metadata"]["type"],
+                "source": chunk["metadata"]["source"],
+                "filename": chunk["metadata"].get("filename"),
+                "chunk_strategy": chunk["metadata"].get("chunk_strategy"),
+                "chunk_size_target": chunk["metadata"].get("chunk_size_target"),
+            },
+            "embedding_model": chunk.get("embedding_model"),
+            "embedding_dim": chunk.get("embedding_dim"),
+            "embedding": embedding[:5] + ["..."] + [embedding[-1]],  # preview only
+        }
+
+        explanation = {
+            "chunk_id": "Unique ID for this specific text chunk.",
+            "doc_id": "Identifier for the source document this chunk belongs to.",
+            "chunk_index": "The position/order of this chunk within the full document.",
+            "text": "The actual text content of the chunk (shortened here).",
+            "token_count": "How many tokens (pieces of words) the chunk contains.",
+            "metadata": {
+                "type": "The document format (e.g., markdown, pdf, csv).",
+                "source": "File path or URL the document came from.",
+                "filename": "Name of the file, if applicable.",
+                "chunk_strategy": "The method used to split this document (e.g., paragraphs, tokens).",
+                "chunk_size_target": "The intended size of each chunk in tokens.",
+            },
+            "embedding_model": "The OpenAI model used to create the embedding vector.",
+            "embedding_dim": "Length of the resulting vector — more dimensions = more nuance.",
+            "embedding": "Numerical vector that semantically represents the text.",
+        }
+
+        display(Markdown(f"### 🔍 Chunk {i + 1} - Embedding Payload (Simplified Preview)"))
+        display(Markdown(f"<pre style='background:#f6f8fa; padding:16px; font-size:13px; border-radius:6px;'>{json.dumps(payload, indent=2)}</pre>"))
+        display(Markdown(f"### 📘 Field Descriptions"))
+        display(Markdown(f"<pre style='background:#fffdee; padding:16px; font-size:13px; border-left: 4px solid #f9c700;'>{json.dumps(explanation, indent=2)}</pre>"))
+
+    if len(chunks) >= 2:
+        sim = embedding_gen.calculate_similarity(
+            chunks[0]['embedding'], chunks[1]['embedding']
+        )
+        display(Markdown(f"---\n### 🔗 Cosine Similarity Between Chunk 1 and 2\n`{sim:.4f}` — A score from 0 (unrelated) to 1 (identical).\n"))
+
+# Run this to display the JSON payload format
+show_embedding_payload_format(chunks_with_embeddings)
+
+## 🚀 Knowledge Check Questions
+
+**Question 1:** Your technical support RAG system isn't finding documents about "authentication failure" when users search for "login errors." What's the most likely issue and solution?
+
+<details>
+<summary>Discuss</summary>
+</details>
+
+**Question 2:** Why are embeddings better than keyword matching for semantic search?
+
+<details>
+<summary>Discuss</summary>
+
+</details>
+
+**Question 3:** You notice that embeddings for your customer support docs show high similarity between completely unrelated topics. What could be wrong?
+
+A) The embedding model is too small  
+B) You need more training data  
+C) The documents contain too much boilerplate text  
+D) The chunk size is too large  
+
+<details>
+<summary>Discuss</summary>
+
+
+</details>
+
+## 🎓 Section Summary & Progress Check
+
+### What You've Learned ✅
+- How embeddings transform text into semantic vectors that capture meaning
+- How to choose the right embedding model for your domain and requirements
+- Techniques for evaluating embedding quality through similarity tests and visualization
+- Performance optimization strategies including batching, caching, and cost management
+- Methods for debugging and monitoring embedding systems in production
+
+### 🔗 Connection to Next Section
+Now that you have high-quality semantic embeddings for your chunks, Section 5 will show you how to store and index them efficiently in vector databases. We'll explore how to set up fast similarity search that can handle millions of documents.
+
+### Self-Assessment Questions
+Before continuing, make sure you can:
+1. Explain why embeddings are better than keyword matching for semantic search
+2. Choose an appropriate embedding model for a given use case
+
+---
+
+## 💪 Real-World Challenge
+
+**Scenario:** You're building a technical support RAG system, but users complain that searches for "authentication failure" don't find documents about "login errors" even though they're the same issue.
+
+**Your debugging steps:**
+1. **Test embedding similarity** between these terms
+2. **Check if technical synonyms** cluster properly
+3. **Consider domain-specific** embedding models
+4. **Evaluate query expansion** techniques
+
+**Expected findings:**
+- Generic embeddings might not capture technical synonyms well
+- Domain-specific training data could improve results
+- Query expansion might help bridge terminology gaps
+
+<details>
+<summary>Solution approach</summary>
+
+**Diagnosis:** Generic embeddings don't capture technical domain synonyms well enough.
+
+**Solutions:**
+1. Use a larger, more capable embedding model
+2. Create a technical synonym dictionary for query expansion
+3. Fine-tune embeddings on technical support data
+4. Use hybrid search combining embeddings with keyword matching
+
+**Implementation:** Start with solution #1 (larger model) for quick improvement, then consider #2 for long-term optimization.
+
+</details>
+
+Ready to store your embeddings in a lightning-fast vector database? Let's dive into Section 5!
+# Section 5: Vector Database Indexing
+
+## 🎯 Learning Objectives
+
+By the end of this section, you will:
+- **Understand** how vector databases enable lightning-fast similarity search
+- **Choose** the right vector database for your scale and requirements
+- **Optimize** indexing strategies for performance and accuracy
+- **Monitor** and troubleshoot vector database performance
+- **Scale** vector search from thousands to millions of documents
+
+## 💡 The Smart Filing System Analogy
+
+> Remember our skilled librarian who expertly navigated the knowledge collection? Now imagine the library has grown to millions of books.
+
+Without organization, finding books about "climate change in agriculture" would require checking every single book (taking days). But our smart librarian has created a special map of the library, organizing similar books into neighborhoods:
+
+**Traditional approach (linear search):**
+- Check every book one by one
+- Takes hours or days for large libraries
+- Guaranteed to find everything, but impossibly slow
+
+**Vector database approach (ANN search):**
+1. **Create neighborhoods** of similar books (clustering)
+2. **Build express routes** between neighborhoods (indexing)
+3. **Navigate quickly** to the right area (approximate search)
+4. **Find the best matches** in that neighborhood (final ranking)
+
+The result: Find relevant books in seconds, not days, even with millions of volumes!
+
+## 📖 Overview
+
+### Understanding Vector Databases
+
+Imagine you have millions or even billions of text chunks, each converted into those special number patterns (vectors) we talked about earlier. How do you quickly find the most relevant ones when a user asks a question? This is where <font color='blue' size="3em">**vector databases**</font> come in.
+
+A <font color='blue' size="3em">**vector database**</font> is like a smart filing system for your embeddings. It organizes them in a way that makes searching through them lightning-fast, using special techniques called <font color='blue' size="3em">**approximate nearest neighbor (ANN)**</font> algorithms.
+
+Think of it this way: instead of comparing your question to every single document (which would take forever), these algorithms create shortcuts. They can quickly find what's most likely relevant without exhaustive searching. These shortcuts are based on creating an <font color='blue' size="3em">**index**</font>, which is like a supercharged table of contents for vectors that supports high-speed similarity search.
+
+To determine which vectors are similar, the most common metric used is <font color='blue' size="3em">**cosine similarity**</font>, which compares the angle between vectors rather than their distance. This is perfect for text, where direction (semantic meaning) matters more than magnitude.
+
+When evaluating how well your database is retrieving results, a popular metric is <font color='blue' size="3em">**recall-at-k**</font>. This tells you how many of the truly relevant results appear in the top K returned vectors. The higher the recall, the fewer good matches are missed.
+
+As your database fills up, you may experience slowdowns. This is due to something called <font color='blue' size="3em">**index fullness**</font>, a state where the vector index approaches its capacity and starts to degrade in performance or accuracy.
+
+<br>
+
+### The Scale Challenge
+
+**Linear search** (comparing to every vector): ⏱️ O(n) — Gets slower as data grows  
+- 1,000 documents: ~1ms  
+- 1,000,000 documents: ~1 second  
+- 1,000,000,000 documents: ~15 minutes
+
+**ANN search** (smart algorithms): ⚡ O(log n) — Stays fast even with massive data  
+- 1,000 documents: ~0.1ms  
+- 1,000,000 documents: ~2ms  
+- 1,000,000,000 documents: ~5ms
+
+This is the difference between unusable and production-ready
+
+<br>
+
+<img src="https://raw.githubusercontent.com/seffbright/rag-pipeline-course/refs/heads/main/images/section-5.png" alt="Vector Database Clustering" style="width: 100%; border-radius: 10px;">
+<p style="text-align: center; margin-top: 10px;">
+<em>Vector Database Clustering: Text embeddings (vectors) are organized into semantic shelves. When a query comes in, the database efficiently finds the closest matching vectors, enabling fast similarity search even across billions of documents.</em></p>
+
+
+<br>
+
+## 🔍 Key Terms & Concepts
+
+**Vector Databases:** A database optimized for storing, indexing, and searching high-dimensional vector embeddings using Approximate Nearest Neighbor (ANN) search algorithms for speed.
+
+**Approximate Nearest Neighbor (ANN):** Search algorithms (e.g., HNSW, IVF, LSH) that find vectors 'close enough' to the query vector extremely quickly, trading perfect accuracy for significant speed and scalability gains.
+
+**Index:** A data structure that organizes vectors for fast similarity search. Like a table of contents for vectors, it helps the database quickly locate similar items.
+
+**Cosine similarity:** A measure of similarity between vectors based on the angle between them, perfect for text embeddings where direction matters more than magnitude.
+
+**Recall-at-k:** A metric measuring how many of the truly relevant results appear in the top K search results. Higher recall means fewer relevant items are missed.
+
+**Index fullness:** How close a vector database is to its capacity limit. Higher fullness can lead to performance degradation.
+<br>
+## 🏗️ Vector Database Landscape
+
+### Popular Vector Database Options
+
+| Database | Best For | Strengths | Considerations |
+|----------|----------|-----------|----------------|
+| **Pinecone** | Production RAG systems | Managed service, excellent performance, easy scaling | Cost scales with usage, vendor lock-in |
+| **Weaviate** | Self-hosted, advanced features | Open source, built-in ML models, GraphQL | Requires more DevOps knowledge |
+| **Qdrant** | High performance, Rust-based | Fast, good filtering, Docker-friendly | Smaller ecosystem |
+| **Chroma** | Development, prototyping | Simple Python API, embedded mode | Less mature for large scale |
+| **Milvus** | Large-scale enterprise | Highly scalable, cloud-native | Complex setup, overkill for small projects |
+| **FAISS** | Research, custom solutions | Facebook's library, highly optimized | Requires custom integration work |
+
+### Choosing Your Vector Database
+
+**For Learning/Prototyping:**
+- **Chroma** - Easiest to get started, runs locally
+- **Simple enough** for experimentation
+
+**For Small-Medium Production:**
+- **Pinecone** - Managed service, great developer experience
+- **Weaviate** - If you want open source with good features
+
+**For Large-Scale Enterprise:**
+- **Milvus** - Can handle billions of vectors
+- **Custom FAISS** - Maximum control and optimization
+
+**For Cost-Conscious:**
+- **Qdrant** or **Weaviate** self-hosted
+- **Avoid per-vector pricing** if you have large datasets
+
+## 🔬 ANN Algorithms Deep Dive
+
+### HNSW (Hierarchical Navigable Small World)
+**How it works:** Creates a multi-layer graph where each layer is a "highway" to different parts of the vector space.
+
+**Analogy:** Like having a highway system, local roads, and walking paths:
+- **Highway (top layer):** Gets you to the right city quickly
+- **Local roads (middle layers):** Navigate to the neighborhood  
+- **Walking paths (bottom layer):** Find the exact house
+
+>- **Pros:** Excellent accuracy-speed trade-off, memory efficient
+- **Cons:** Build time can be slow for large datasets
+- **Best for:** Most production RAG systems
+
+### LSH (Locality Sensitive Hashing)
+**How it works:** Creates hash buckets where similar vectors end up in the same bucket.
+
+**Analogy:** Like organizing books by color-coded stickers - books with similar stickers are likely to be related.
+
+>- **Pros:** Very fast, good for high-dimensional spaces
+- **Cons:** Lower accuracy than HNSW
+- **Best for:** Large-scale applications where speed > precision
+
+### IVF (Inverted File Index)
+**How it works:** Clusters vectors into regions, then searches only relevant clusters.
+
+**Analogy:** Like dividing a library into sections (fiction, science, history) and only searching the relevant section.
+
+>- **Pros:** Good balance, works well with filtering
+- **Cons:** Cluster quality affects performance
+- **Best for:** Applications with metadata filtering
+
+
+# @title ## 🎯 Interactive *Exploration* { display-mode: "form" }
+## 💻 Lab
+
+## What This Code Demonstrates
+
+### Vector Database Integration (via Pinecone)
+
+This section connects to the Pinecone vector database and prepares the environment to store semantically meaningful document chunks as vectors.
+
+### Key Capabilities Demonstrated:
+1. **Pinecone Initialization**:
+   - Uses environment variables to securely load the API key and index name.
+   - Initializes the Pinecone client and confirms connectivity.
+
+2. **Index Management**:
+   - Connects to an existing index or creates one if missing.
+   - Retrieves and displays current index statistics like vector count, dimensionality, and namespaces.
+
+3. **Chunk Upsert Logic**:
+   - Converts enriched document chunks (with embeddings) into Pinecone-ready vectors.
+   - Adds relevant metadata (document ID, source, type, timestamp).
+   - Upserts in batches, handles errors gracefully, and tracks success/failure rates.
+
+---
+
+### How This Builds on the Previous Lab
+
+This section builds directly on the **Embedding Generation** lab:
+
+- It takes the `chunks_with_embeddings` output (text + vector) and stores them in a persistent vector index.
+- This vector store acts as the retrieval layer for RAG, allowing the system to semantically search for the most relevant chunks.
+- Prepares the system for the next step: **query-time retrieval and grounding in RAG pipelines**.
+
+# @title 🔧 Pinecone Configuration { display-mode: "form" }
+
+# Using Colab secrets for secure API key management
+import os
+from google.colab import userdata
+
+# Get configuration from Colab secrets
+try:
+    PINECONE_API_KEY = "pcsk_6Zodyn_SSE6rgs5s1FhCWDgXFRrBLNmmNwqLHvz4qJBnUz77oVKxngpTXNZsHnRZ2RTYui"
+    PINECONE_INDEX_NAME = userdata.get('PINECONE_INDEX_NAME')
+
+    # For dimension, handle both string and int from userdata
+    try:
+        PINECONE_DIMENSION = int(userdata.get('PINECONE_DIMENSION', '3072'))
+    except:
+        PINECONE_DIMENSION = 3072  # Default dimension
+
+    print("✅ Pinecone configuration loaded from Colab secrets")
+    print(f"   Index: {PINECONE_INDEX_NAME}")
+    print(f"   Dimension: {PINECONE_DIMENSION}")
+
+    # Update environment for later cells
+    os.environ['PINECONE_API_KEY'] = PINECONE_API_KEY
+    os.environ['PINECONE_INDEX_NAME'] = PINECONE_INDEX_NAME
+    os.environ['PINECONE_DIMENSION'] = str(PINECONE_DIMENSION)
+
+except Exception as e:
+    print("⚠️ Error loading Pinecone configuration from Colab secrets!")
+    print(f"Error: {e}")
+    print("\nPlease ensure you have added these to Colab secrets:")
+    print("1. Click the 🔑 key icon in the left sidebar")
+    print("2. Add your PINECONE_API_KEY")
+    print("3. Optionally add PINECONE_INDEX_NAME and PINECONE_DIMENSION")
+
+    # Try environment variables as fallback
+    PINECONE_API_KEY = os.getenv('PINECONE_API_KEY', '')
+    PINECONE_INDEX_NAME = os.getenv('PINECONE_INDEX_NAME', 'automation-suite-knowledgebase')
+    PINECONE_DIMENSION = int(os.getenv('PINECONE_DIMENSION', '3072'))
+
+    if PINECONE_API_KEY:
+        print("\n✅ Found Pinecone API key in environment variables (fallback)")
+
+# @title Run the Code{ display-mode: "form" }
+
+import pinecone
+from pinecone import Pinecone, ServerlessSpec
+from typing import List, Dict, Optional
+import json
+from datetime import datetime
+
+class PineconeManager:
+    def __init__(self):
+        self.pc = None
+        self.index = None
+        self.index_name = os.environ.get('PINECONE_INDEX_NAME', 'uipath-rag-demo')
+        self.pinecone_host = os.environ.get('PINECONE_ENDPOINT')
+        self.api_key = os.environ.get('PINECONE_API_KEY')
+
+    def initialize(self) -> bool:
+        try:
+            if not self.api_key:
+                print("❌ Missing Pinecone API key.")
+                return False
+            self.pc = Pinecone(api_key=self.api_key)
+            print("✅ Pinecone client initialized!")
+            return True
+        except Exception as e:
+            print(f"❌ Initialization failed: {e}")
+            return False
+
+    def connect_to_index(self) -> Optional[any]:
+        if not self.pc:
+            print("❌ Client not initialized.")
+            return None
+        try:
+            print(f"🔗 Connecting to index '{self.index_name}'...")
+            if self.pinecone_host and self.index_name not in self.pc.list_indexes().names:
+                self.index = self.pc.Index(name=self.index_name, host=self.pinecone_host)
+            else:
+                self.index = self.pc.Index(self.index_name)
+            stats = self.index.describe_index_stats()
+            print(f"✅ Connected to index '{self.index_name}'")
+            return self.index
+        except Exception as e:
+            print(f"❌ Error connecting: {e}")
+            return None
+
+    def get_index_stats(self) -> Optional[Dict]:
+        if not self.index:
+            print("❌ No index connected.")
+            return None
+        try:
+            stats = self.index.describe_index_stats()
+            return {
+                'total_vectors': stats.total_vector_count,
+                'dimensions': stats.dimension,
+                'namespaces': {ns: ns_info.vector_count for ns, ns_info in stats.namespaces.items()}
+            }
+        except Exception as e:
+            print(f"❌ Stats fetch failed: {e}")
+            return None
+
+# Run initialization
+pinecone_manager = PineconeManager()
+index = None
+
+if pinecone_manager.initialize():
+    index = pinecone_manager.connect_to_index()
+    if index:
+        stats = pinecone_manager.get_index_stats()
+        if stats:
+            print(f"\n📊 Index Stats:")
+            for k, v in stats.items():
+                print(f"   {k}: {v}")
+else:
+    print("⚠️ Pinecone not initialized")
+
+## 🎓 Section Summary & Progress Check
+
+### What You've Learned ✅
+- How vector databases enable lightning-fast similarity search at massive scale
+- The trade-offs between different vector database options and ANN algorithms
+- Performance optimization techniques for indexing and querying
+- Monitoring and troubleshooting strategies for production systems
+- Common pitfalls and how to avoid them in vector database deployments
+
+### 🔗 Connection to Next Section
+Now that you have a high-performance vector database storing your embeddings, Section 6 will show you how to understand and transform user queries to get the best possible search results. We'll explore query preprocessing and optimization techniques.
+
+### Self-Assessment Questions
+Before continuing, make sure you can:
+1. Choose the right vector database for your scale and requirements
+2. Explain the trade-offs between accuracy and speed in ANN algorithms
+3. Implement performance monitoring for vector database systems
+4. Optimize index configuration for your specific use case
+
+*If any concepts feel unclear, review the relevant sections above.*
+
+---
+
+## 💪 Production Challenge
+
+**Scenario:** Your RAG system works great with 10,000 documents, but performance degrades severely when you scale to 1 million documents. Users are experiencing 5-10 second query times.
+
+**Your investigation checklist:**
+1. **Check index configuration** - Are you using optimal parameters?
+2. **Monitor resource usage** - CPU, memory, disk I/O bottlenecks?
+3. **Analyze query patterns** - Are complex filters slowing things down?
+4. **Test different algorithms** - Would HNSW vs IVF make a difference?
+5. **Consider architecture** - Do you need sharding or replicas?
+
+**Expected solutions:**
+- Optimize index parameters (ef, M values)
+- Implement result caching for common queries
+- Use metadata filtering to reduce search space  
+- Consider horizontal scaling or better hardware
+
+<details>
+<summary>Detailed troubleshooting approach</summary>
+
+**Step 1: Measure baseline performance**
+- Record current query times, index build times
+- Check memory and CPU usage during queries
+
+**Step 2: Test configuration changes**
+- Increase `ef` parameter for better accuracy/speed balance
+- Adjust batch sizes for upserts
+- Test different distance metrics if applicable
+
+**Step 3: Implement optimizations**
+- Add query result caching
+- Implement metadata pre-filtering
+- Consider query preprocessing to reduce load
+
+**Step 4: Scale architecture if needed**
+- Horizontal sharding across multiple indexes
+- Read replicas for query load distribution
+- Upgrade to higher-performance instance types
+
+</details>
+
+Ready to optimize how users interact with your vector search? Let's explore query understanding and transformation in Section 6!
+### Cell 3: 📤 Upsert Chunks to Vector DB
+class VectorDatabaseManager:
+    def __init__(self, api_key: str, index_name: str, dimension: int = 3072, metric: str = 'cosine'):
+        self.pc = Pinecone(api_key=api_key)
+        self.index_name = index_name
+        self.dimension = 3072
+        self.metric = metric
+        self.index = None
+
+    def create_index(self, cloud: str = 'aws', region: str = 'us-east-1') -> None:
+        existing_indexes = [idx.name for idx in self.pc.list_indexes()]
+        if self.index_name not in existing_indexes:
+            print(f"🔨 Creating index: {self.index_name}")
+            self.pc.create_index(
+                name=self.index_name,
+                dimension=self.dimension,
+                metric=self.metric,
+                spec=ServerlessSpec(cloud=cloud, region=region)
+            )
+            import time
+            while not self.pc.describe_index(self.index_name).status['ready']:
+                time.sleep(1)
+            print(f"✅ Created {self.index_name}")
+        else:
+            print(f"ℹ️ Index '{self.index_name}' already exists")
+        self.index = self.pc.Index(self.index_name)
+
+    def prepare_vectors_for_upsert(self, chunks: List[Dict], namespace: Optional[str] = None) -> List[tuple]:
+        vectors = []
+        for chunk in chunks:
+            metadata = {
+                'text': chunk['text'][:1000],
+                'doc_id': chunk.get('doc_id', ''),
+                'chunk_index': chunk.get('chunk_index', 0),
+                'source': chunk.get('metadata', {}).get('source', ''),
+                'type': chunk.get('metadata', {}).get('type', ''),
+                'created_at': datetime.now().isoformat()
+            }
+            vector = (
+                chunk['chunk_id'],
+                chunk['embedding'],
+                metadata
+            )
+            vectors.append(vector)
+        return vectors
+
+    def upsert_chunks(self, chunks: List[Dict], namespace: Optional[str] = None, batch_size: int = 100) -> Dict:
+        vectors = self.prepare_vectors_for_upsert(chunks, namespace)
+        stats = { 'total_vectors': len(vectors), 'successful_upserts': 0, 'failed_upserts': 0 }
+        print(f"📤 Upserting {len(vectors)} vectors...")
+        for i in range(0, len(vectors), batch_size):
+            batch = vectors[i:i + batch_size]
+            try:
+                response = self.index.upsert(vectors=batch, namespace=namespace)
+                stats['successful_upserts'] += response['upserted_count']
+            except Exception as e:
+                print(f"❌ Batch {i//batch_size+1} error: {e}")
+                stats['failed_upserts'] += len(batch)
+        print(f"✅ Upserts: {stats['successful_upserts']}, Failures: {stats['failed_upserts']}")
+        return stats
+
+# Use manager to create and upsert
+vector_db = VectorDatabaseManager(
+    api_key=os.getenv('PINECONE_API_KEY'),
+    index_name=os.getenv('PINECONE_INDEX_NAME', 'customer-support-rag'),
+    dimension=int(os.getenv('PINECONE_DIMENSION', '1536'))
+)
+
+vector_db.create_index()
+if chunks_with_embeddings:
+    vector_db.upsert_chunks(chunks_with_embeddings, namespace='support_docs_v1')
+
+# Section 6: Query Understanding & Transformation (for Better Retrieval)
+
+## 🎯 Learning Objectives
+
+>By the end of this section, you will:
+- **Understand** how to interpret user queries for optimal retrieval
+- **Implement** query transformation techniques to improve search accuracy
+- **Apply** query expansion strategies to handle synonyms and related terms
+- **Design** query processing pipelines for different use cases
+- **Debug** common query understanding issues in RAG systems
+
+<br>
+
+## 💡 The Expert Librarian Analogy
+
+Let's return to our skilled librarian. Imagine you ask, "I need something about water stuff for my science project." A novice librarian might just point you to the general science section. But our expert librarian:
+
+1. **Asks clarifying questions** - "What grade level? What aspect of water?"
+2. **Translates vague terms** - "water stuff" becomes "hydrology" or "aquatic ecosystems"
+3. **Expands the search** - Checks resources about "H₂O," "aquatic," and "marine" topics
+4. **Uses experience** - Predicts what information students typically need for water-related projects
+
+This is exactly what query understanding and transformation does for RAG systems!
+
+## 📖 Overview
+
+### Understanding Query Processing
+
+People rarely ask questions perfectly. We use shortcuts, abbreviations, and sometimes we're not even sure exactly what we want to ask. This section is all about how AI systems make sense of human questions and turn them into something that works better with our retrieval system.
+
+**Query understanding** means figuring out what you're actually looking for, even when your question is vague or unclear. **Query transformation** means rewriting or adjusting your question to get better search results.
+
+Think of it as the difference between asking "Where's that book about the wizard kid?" versus "Harry Potter location." A good librarian understands what you mean and helps you find exactly what you need, even if your question isn't perfectly phrased.
+
+<br>
+
+<img src="https://raw.githubusercontent.com/seffbright/rag-pipeline-course/refs/heads/main/images/section-6.png" alt="Query Transformation Process" style="width: 100%; border-radius: 10px;">
+<p style="text-align: center; margin-top: 10px;"><em>Query Transformation Options: The query processor analyzes the raw query and applies techniques to generate versions better suited for retrieval.</em></p>
+
+<br>
+
+## 🔍 Key Terms & Concepts
+
+**Query understanding:** Figuring out what the user is really asking for based on their original question.
+
+**Query transformation:** Changing the question to make it easier for the system to find the right answer — like rewording it, adding keywords, or splitting it into smaller parts.
+
+**Query expansion:** Adding related terms, synonyms, or context to make the search more comprehensive.
+
+**Intent classification:** Determining what type of request the user is making (informational, navigational, transactional).
+
+**Entity extraction:** Identifying specific people, places, products, or concepts mentioned in the query.
+
+## 🛠️ Query Transformation Techniques
+
+### 1. **Query Expansion**
+Adding related terms to capture more relevant documents:
+```python
+Original: "login error"
+Expanded: "login error authentication failure sign-in problem access denied"
+```
+
+### 2. **Synonym Substitution**
+Replacing terms with domain-specific alternatives:
+```python
+Original: "API timeout"
+Transformed: "API timeout service unavailable request timeout connection timeout"
+```
+
+### 3. **Query Decomposition**
+Breaking complex queries into simpler parts:
+```python
+Original: "How to reset password and update email address?"
+Decomposed:
+- "how to reset password"
+- "how to update email address"
+```
+
+### 4. **Context Enhancement**
+Adding implicit context based on user history or domain:
+```python
+Original: "deployment error"
+Enhanced: "deployment error kubernetes docker container application"
+```
+
+## 🚀 Knowledge Check Questions
+
+**Question 1:** A user searches for "auth issues" but your system doesn't find documents about "authentication problems." What query transformation technique would help most?
+
+A) Query decomposition  
+B) Synonym expansion  
+C) Context enhancement  
+D) Intent classification  
+
+<details>
+<summary>Click to reveal answer</summary>
+
+**Answer: B) Synonym expansion**
+
+The user is using "auth" (abbreviated) and "issues" (generic) while documents use "authentication" (full term) and "problems" (synonym). Synonym expansion would:
+- Expand "auth" to include "authentication", "login", "sign-in"
+- Expand "issues" to include "problems", "errors", "failures"
+
+This bridges the vocabulary gap between user language and document language.
+</details>
+
+**Question 2:** Your RAG system struggles with vague queries like "something about data." What's the best approach to handle this?
+
+<details>
+<summary>Click to reveal answer</summary>
+
+**Answer:** Use a combination of techniques:
+
+1. **Context enhancement** - Add domain-specific terms based on the user's role or previous queries
+2. **Query clarification** - Ask follow-up questions to narrow down the request
+3. **Broad-to-narrow search** - Start with broad results, then help users refine
+4. **Popular term suggestions** - Show common data-related topics as options
+
+**Example transformation:**
+- Original: "something about data"
+- Enhanced: "data analysis visualization storage database analytics"
+- With clarification: "Are you looking for data analysis, data storage, or data visualization?"
+</details>
+
+**Question 3:** When should you avoid transforming user queries?
+
+<details>
+<summary>Click to reveal answer</summary>
+
+**Answer:** Avoid query transformation when:
+
+1. **Exact matches are critical** - Legal terms, product codes, technical specifications
+2. **User intent is very specific** - When users use precise terminology intentionally
+3. **Transformation adds noise** - Over-expansion that dilutes the search focus
+4. **Performance is critical** - Real-time applications where transformation adds latency
+
+**Example:** If someone searches for "error code 404", don't expand it to "error code 404 not found missing page" - they want that specific error code information.
+
+**Rule of thumb:** Transform when user language is casual/vague, preserve when user language is technical/specific.
+</details>
+
+## 🎓 Section Summary & Progress Check
+
+### What You've Learned ✅
+- How to interpret and transform user queries for better retrieval
+- Techniques for handling vocabulary gaps between users and documents
+- When to apply different query transformation strategies
+- How to debug common query understanding issues
+- The balance between expanding queries and maintaining precision
+
+### 🔗 Connection to Next Section
+Now that you can understand and transform user queries effectively, Section 7 will show you different strategies for retrieving the most relevant information. We'll explore vector search, keyword search, hybrid approaches, and reranking techniques.
+
+### Self-Assessment Questions
+Before continuing, make sure you can:
+1. Identify when a query needs transformation vs. when to leave it unchanged
+2. Apply appropriate query expansion techniques for different scenarios
+3. Debug vocabulary mismatch issues between queries and documents
+4. Balance query expansion with search precision
+
+*If any concepts feel unclear, review the relevant sections above.*
+
+---
+
+## 💪 Practice Challenge
+
+**Scenario:** You're building a customer support RAG system. Users often ask vague questions like "my account is broken" or use product nicknames instead of official names.
+
+**Your task:** Design a query transformation pipeline that handles:
+- Vague problem descriptions
+- Product nickname mapping
+- Technical term expansion
+- Context from user's account history
+
+<details>
+<summary>Sample approach</summary>
+
+**Pipeline design:**
+1. **Entity extraction** - Identify product names, account types
+2. **Nickname mapping** - "mobile app" → "iOS application Android application"
+3. **Problem categorization** - "broken" → "error malfunction not working failure"
+4. **Context injection** - Add user's product usage history
+5. **Technical expansion** - Add relevant technical terms based on detected issues
+
+**Example:** "mobile app broken" → "iOS application Android application error malfunction not working failure login authentication sync"
+</details>
+
+Ready to learn about powerful retrieval strategies? Let's continue to Section 7!
+# @title ## 🎯 Interactive *Exploration* { display-mode: "form" }
+
+from google.colab import userdata
+from IPython.display import IFrame
+
+# Render in iframe
+IFrame(userdata.get('SECTION_6')
+, width=800, height=1200)
+## 💻 Implementation Lab
+## 💻 Lab - Embedding Generation for Semantic Search
+
+### What This Code Demonstrates
+
+This section shows how to transform a user query into an embedding, search the Pinecone vector database using cosine similarity, and retrieve the top-K most relevant document chunks. This builds directly upon earlier stages where document embeddings were stored.
+
+#### Techniques Implemented:
+- Embedding of user queries using the same model as documents
+- Vector similarity search (cosine)
+- Retrieval of top-k results from the Pinecone index
+
+#### Why it’s useful for RAG:
+- Enables retrieval of semantically relevant context to be fed into an LLM
+- Core to grounding answers in source material
+
+#### How it builds upon previous labs:
+- Uses `chunks_with_embeddings` from earlier ingestion
+- Relies on previously configured and connected Pinecone index
+
+# @title User Query Setup { display-mode: "form" }
+QUERY_INPUT = "How do I connect UiPath to Salesforce and automate lead creation?"  # @param {type:"string"}
+TOP_K = 5  # @param {type:"number"}
+# @title Run the Code { display-mode: "form" }
+
+import openai
+import numpy as np
+
+def embed_query(query: str, model: str = "text-embedding-3-large") -> List[float]:
+    """Embed user query using same model as document chunks."""
+    response = openai.embeddings.create(
+        input=query,
+        model=model
+    )
+    return response.data[0].embedding
+
+def search_vector_db(query_embedding: List[float], top_k: int = 5, namespace: str = 'support_docs_v1') -> List[Dict]:
+    """Query Pinecone index for similar document chunks."""
+    if not index:
+        raise ValueError("Index not connected.")
+
+    results = index.query(
+        vector=query_embedding,
+        top_k=top_k,
+        namespace=namespace,
+        include_metadata=True
+    )
+    return results['matches']
+
+# Run embedding and search
+query_embedding = embed_query(QUERY_INPUT)
+search_results = search_vector_db(query_embedding, top_k=TOP_K)
+
+# @title 🧠 Behind the Scenes: Visualizing Query Response { display-mode: "form" }print(index.describe_index_stats())
+print(len(chunks_with_embeddings))
+print(chunks_with_embeddings[0])
+for i, match in enumerate(search_results):
+    print(f"\n🔹 Result {i+1}")
+    print(f"   Score: {match['score']:.4f}")
+    print(f"   Source: {match['metadata'].get('source', 'N/A')}")
+    print(f"   Doc ID: {match['metadata'].get('doc_id', 'N/A')}")
+    print(f"   Text Snippet:\n   {match['metadata'].get('text', '')[:300]}...")
+
+# Supplemental
+# Section 2-A: Understanding Tokens in Language Models
+
+When working with large language models like GPT-4, it's important to understand that:
+
+> **Tokens ≠ words**  
+> A token is a chunk of text that the model can “understand.”  
+> The tokenizer splits words based on **subword frequency**, not grammar.
+
+This means a single word like `doghouse` might be split into two tokens (`dog`, `house`), while another word like `doggy` could be just one token depending on how common each form is in the model's training data.
+
+See the OpenAI's tokenizer script below:
+
+
+import tiktoken
+
+def explain_tokenization(text, model="gpt-4"):
+    # Load the tokenizer for the specified model
+    encoding = tiktoken.encoding_for_model(model)
+
+    # Encode the input text into token IDs
+    token_ids = encoding.encode(text)
+    decoded_tokens = [encoding.decode([t]) for t in token_ids]
+
+    print("=" * 60)
+    print(f"🔍 Tokenization for: '{text}'")
+    print("=" * 60)
+    print(f"📦 Total tokens: {len(token_ids)}\n")
+
+    for i, (tid, token) in enumerate(zip(token_ids, decoded_tokens)):
+        printable = token.replace("\n", "\\n")
+        print(f" Token {i+1:02}: ID={tid:<6} → '{printable}'")
+
+    print("=" * 60 + "\n")
+
+
+# === Try these examples ===
+
+examples = [
+    "dog",           # Basic word
+    "doggy",         # Slightly longer word
+    "doghouse",      # Compound word
+    "responsiveness",# Word with prefix and suffix
+    "pre-processing",# Hyphenated word
+    "un@usual!",     # Includes special characters
+    "The quick brown fox jumps over 13 lazy dogs.", # Full sentence
+]
+
+for text in examples:
+    explain_tokenization(text)
+
+ # Section 2-B: Understanding Prompt, Completion, and Model Response in the OpenAI API
+
+When working with OpenAI's `chat/completions` endpoint (used in ChatGPT-like experiences), it's essential to understand how different parts of the request and response are defined; especially because you're billed based on **tokens**, not just the number of API calls.
+
+---
+
+## 🔹 What is a **Prompt**?
+
+> **The input** you send to the model.
+
+In the Chat API, a prompt includes:
+- The **system message** (optional): sets behavior
+- The **user message(s)**: your actual question or instruction
+- Any previous **assistant responses**: if maintaining chat history
+
+### 🧾 Example Prompt
+```json
+[
+  { "role": "system", "content": "You are a helpful assistant." },
+  { "role": "user", "content": "What is the capital of France?" }
+]
+```
+
+✅ The **prompt tokens** include all these messages.
+
+---
+
+## 🔹 What is a **Completion**?
+
+> **The output** the model generates in response to your prompt.
+
+### 🧾 Example Completion
+```json
+{ "role": "assistant", "content": "The capital of France is Paris." }
+```
+
+✅ This part is counted as **completion tokens**.
+
+---
+
+## 🔹 What is the **Model Response**?
+
+> The full object you receive from the API — it includes the completion plus metadata like usage stats and model info.
+
+### 🧾 Example Model Response
+```json
+{
+  "id": "chatcmpl-abc123",
+  "choices": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "The capital of France is Paris."
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 17,
+    "completion_tokens": 10,
+    "total_tokens": 27
+  }
+}
+```
+
+---
+
+## 💵 Billing Summary
+
+You are charged **by token**, not by call.
+
+| Type       | Charged? | Description                              |
+|------------|----------|------------------------------------------|
+| Prompt     | ✅ Yes   | Everything you send in the request       |
+| Completion | ✅ Yes   | Everything the model generates           |
+| Model Response | ❌ No | Metadata and wrapping info (not billed) |
+
+### Cost Breakdown
+print("""
+🧮 Cost Example (GPT-4, 8K context)
+
+Prompt tokens    : 1,000
+Completion tokens:   500
+Total tokens     : 1,500
+
+Pricing:
+- Prompt     @ $0.03 / 1K → $0.03
+- Completion @ $0.06 / 1K → $0.03
+-------------------------------
+TOTAL COST             → $0.06
+""")
+
+# Section 3-A: LLM Architecture Explorer
+from IPython.display import IFrame, display
+
+display(
+    IFrame(
+        src="https://bbycroft.net/llm",
+        width="100%",
+        height=1000
+    )
+)
+
+# Section 4-A: Vectors Visualized
+from IPython.display import IFrame, display
+
+display(
+    IFrame(
+        src="https://projector.tensorflow.org/",
+        width="100%",
+        height=1000
+    )
+)
